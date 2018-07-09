@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Parallax</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
+    <style>
+        * {padding: 0; margin: 0;}
+        body {
+            font-family: 'Jua', sans-serif;
+        }
+
+        #nav {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        #nav h1 {
+            float: left;
+            color: #fff;
+            font-size: 40px;
+            padding: 10px 0 0 10px;
+        }
+
+        #nav ul {
+            float: right;
+            padding-right: 10px;
+        }
+
+        #nav ul li {
+            display: inline;
+        }
+
+        #nav ul li a {
+            display: inline-block;
+            padding: 20px;
+            text-decoration: none;
+            color: #fff;
+        }
+
+        #nav ul li.active a {
+            color: #283593;
+            border-bottom: 3px solid #283593;
+        }
+
+        #contents {
+            text-align: center;
+            font-size: 6vw;
+            color: #fff;
+        }
+
+        #contents>div {
+            height: 100vh;
+            line-height: 100vh;
+        }
+
+        #section1 {
+            background-color: #c0ca33;
+        }
+
+        #section2 {
+            background-color: #7cb342;
+        }
+
+        #section3 {
+            background-color: #ffa726;
+        }
+
+        #section4 {
+            background-color: #8d6e63;
+        }
+
+        #section5 {
+            background-color: #ff7043;
+        }
+
+        #section6 {
+            background-color: #03a9f4;
+        }
+
+        .info {
+            position: fixed;
+            left: 10px;
+            bottom: 30px;
+        }
+
+        .info span {
+            position: relative;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 50%;
+            color: #fff;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            margin: 3px;
+            text-align: center;
+            line-height: 50px;
+        }
+
+        .info .offset_top:before {
+            content: 'offset';
+            position: absolute;
+            left: 50%;
+            top: -40px;
+            transform: translatex(-50%);
+        }
+
+        .info .scroll_top:before {
+            content: 'scroll';
+            position: absolute;
+            left: 50%;
+            top: -40px;
+            transform: translatex(-50%);
+        }
+
+    </style>
+</head>
+
+<body>
+    <nav id="nav">
+        <h1>웹스</h1>
+        <ul>
+            <li class="active"><a href="#section1">어록1</a></li>
+            <li><a href="#section2">어록2</a></li>
+            <li><a href="#section3">어록3</a></li>
+            <li><a href="#section4">어록4</a></li>
+            <li><a href="#section5">어록5</a></li>
+            <li><a href="#section6">어록6</a></li>
+        </ul>
+    </nav>
+    <div id="contents">
+        <div id="section1">개가 짖어도 기차는 달릴 수밖에 없다!</div>
+        <div id="section2">모든 진실이 모든 이의 귀에 들리는 것은 아니다</div>
+        <div id="section3">알면 사랑한다</div>
+        <div id="section4">용기란 공포를 1분 더 참는 것이다</div>
+        <div id="section5">의리를 지키려면 불리할 때에 지키는 것이다</div>
+        <div id="section6">프랑스어 사전에 불가능이란 단어는 없다</div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        var nav = $("#nav ul li");
+        var cont = $("#contents > div");
+        nav.click(function(e) {
+            e.preventDefault();
+            var target = $(this);
+            var index = target.index();
+            //alert(index);
+            var section = cont.eq(index);
+            var offset = section.offset().top;
+            offset = parseInt(offset);
+            $(".offset_top").text(offset);
+
+            $("html,body").animate({
+                scrollTop: offset
+            }, 600, "easeInBounce");
+        });
+        $(window).scroll(function() {
+            var wScroll = $(this).scrollTop();
+            wScroll = parseInt(wScroll);
+            $(".scroll_top").text(wScroll);
+
+            if (wScroll >= cont.eq(0).offset().top) {
+                nav.removeClass("active");
+                nav.eq(0).addClass("active");
+            }
+            if (wScroll >= cont.eq(1).offset().top) {
+                nav.removeClass("active");
+                nav.eq(1).addClass("active");
+            }
+            if (wScroll >= cont.eq(2).offset().top) {
+                nav.removeClass("active");
+                nav.eq(2).addClass("active");
+            }
+            if (wScroll >= cont.eq(3).offset().top) {
+                nav.removeClass("active");
+                nav.eq(3).addClass("active");
+            }
+            if (wScroll >= cont.eq(4).offset().top) {
+                nav.removeClass("active");
+                nav.eq(4).addClass("active");
+            }
+            if (wScroll >= cont.eq(5).offset().top - 1) {
+                nav.removeClass("active");
+                nav.eq(5).addClass("active");
+            }
+        });
+
+    </script>
+</body>
+
+</html>

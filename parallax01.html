@@ -3,27 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <title>Parallax</title>
-    
+
     <link href="https://fonts.googleapis.com/css?family=Jua" rel="stylesheet">
     <style>
-        *{padding: 0; margin:0;}
-        body {font-family: 'Jua', sans-serif;}
-        #nav {position: fixed; left: 0; top: 0; width: 100%; background-color: rgba(255,255,255,0.6);}
-        #nav h1 {float: left; color: #fff; font-size: 40px; padding:10px 0 0 10px; }
-        #nav ul {float: right; padding-right: 10px; }
-        #nav ul li {display: inline; }
-        #nav ul li a {display: inline-block; padding: 20px 10px; text-decoration: none; color: #fff; font-size: 18px;}
+        * {
+            padding: 0;
+            margin: 0;
+        }
 
-        #contents {text-align: center; font-size: 6vw; color: #fff;}
-        #contents > div {height: 100vh; line-height: 100vh;}
-        #section1 {background-color: #7cb342;}
-        #section2 {background-color: #c0ca33;}
-        #section3 {background-color: #ffa726;}
-        #section4 {background-color: #8d6e63;}
-        #section5 {background-color: #ff7043;}
-        #section6 {background-color: #03a9f4;}
+        body {
+            font-family: 'Jua', sans-serif;
+        }
+
+        #nav {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+
+        #nav h1 {
+            float: left;
+            color: #fff;
+            font-size: 40px;
+            padding: 10px 0 0 10px;
+        }
+
+        #nav ul {
+            float: right;
+            padding-right: 10px;
+        }
+
+        #nav ul li {
+            display: inline;
+        }
+
+        #nav ul li a {
+            display: inline-block;
+            padding: 20px 10px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 18px;
+        }
+
+        #contents {
+            text-align: center;
+            font-size: 6vw;
+            color: #fff;
+        }
+
+        #contents>div {
+            height: 100vh;
+            line-height: 100vh;
+        }
+
+        #section1 {
+            background-color: #7cb342;
+        }
+
+        #section2 {
+            background-color: #c0ca33;
+        }
+
+        #section3 {
+            background-color: #ffa726;
+        }
+
+        #section4 {
+            background-color: #8d6e63;
+        }
+
+        #section5 {
+            background-color: #ff7043;
+        }
+
+        #section6 {
+            background-color: #03a9f4;
+        }
     </style>
 </head>
+
 <body>
     <nav id="nav">
         <h1>웹스</h1>
@@ -45,20 +105,22 @@
         <div id="section5">의리를 지키려면 불리할 때에 지키는 것이다</div>
         <div id="section6">프랑스어 사전에 불가능이란 단어는 없다</div>
     </div>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
         var nav = $("#nav ul li");
         var contents = $("#contents > div");
 
-        nav.click(function(e){
+        nav.click(function(e) {
             e.preventDefault();
-            var target = $(this);				         	// 버튼의 타겟을 변수에 저장
-            var index = target.index();		                // 버튼의 index를 설정
-            var section = $("#contents > div").eq(index);	// 각 콘텐츠를 변수에 저장
-            var offset = section.offset().top;				// 각 콘텐츠의 offset 값을 변수에 저장
+            var target = $(this); // 버튼의 타겟을 변수에 저장
+            var index = target.index(); // 버튼의 index를 설정
+            var section = $("#contents > div").eq(index); // 각 콘텐츠를 변수에 저장
+            var offset = section.offset().top; // 각 콘텐츠의 offset 값을 변수에 저장
             //alert(offset);
-            $("html, body").animate({ scrollTop:offset }, 400);
+            $("html, body").animate({
+                scrollTop: offset
+            }, 400);
         });
     </script>
 </body>
