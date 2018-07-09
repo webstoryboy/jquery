@@ -1,4 +1,4 @@
 # jquery
 
 Parallax site example
-1. https://webstoryboy.github.io/jquery/parallax01.html
+1. Parallax Basic : https://webstoryboy.github.io/jquery/parallax01.html
