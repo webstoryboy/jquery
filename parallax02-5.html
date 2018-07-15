@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Orbitron:400,500,700,900');
+        /*font-family: 'Orbitron', sans-serif;*/
+
+        /* reset */
+
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        li,
+        ul {
+            list-style: none
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        .clearfix {
+            *zoom: 1
+        }
+
+        .clearfix:before,
+        .clearfix:after {
+            display: block;
+            content: '';
+            line-height: 0;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        body {
+            font-family: 'Orbitron', sans-serif
+        }
+
+        /* nav */
+
+        #nav {
+            position: fixed;
+            left: 0;
+            top: 0;
+            z-index: 100;
+            width: 100%;
+            height: 56px;
+            text-align: center;
+            transition: top 0.3s ease-in-out;
+        }
+
+        #nav.nav-up {
+            top: -56px;
+        }
+
+        #nav li {
+            float: left;
+            width: 16.6666%;
+        }
+
+        #nav li a {
+            display: block;
+            background-color: rgba(255, 255, 255, 0.3);
+            color: #fff;
+            padding: 20px;
+        }
+
+        #nav li.active a {
+            background-color: rgba(0, 0, 0, 0.5)
+        }
+
+
+        /* contents */
+
+        #contents {
+            text-align: center;
+        }
+
+        #contents>div {
+            line-height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            font-size: 30px;
+        }
+
+        /* section */
+
+        #section1 {
+            background-image: url(https://tistory4.daumcdn.net/tistory/2141493/skin/images/bg03.jpg);
+        }
+
+        #section2 {
+            background-image: url(https://tistory4.daumcdn.net/tistory/2141493/skin/images/bg02.jpg);
+        }
+
+        #section3 {
+            background-image: url(https://tistory4.daumcdn.net/tistory/2141493/skin/images/bg01.jpg);
+        }
+
+        #section4 {
+            background-image: url(https://tistory4.daumcdn.net/tistory/2141493/skin/images/bg04.jpg);
+        }
+
+        #section5 {
+            background-image: url(https://tistory4.daumcdn.net/tistory/2141493/skin/images/bg05.jpg);
+        }
+
+        #section6 {
+            background-image: url(https://tistory4.daumcdn.net/tistory/2141493/skin/images/bg06.jpg);
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="nav">
+        <ul>
+            <li class="active"><a href="#section1"><span>Intro</span></a></li>
+            <li><a href="#section2"><span>Skill</span></a></li>
+            <li><a href="#section3"><span>Coding</span></a></li>
+            <li><a href="#section4"><span>Design</span></a></li>
+            <li><a href="#section5"><span>About</span></a></li>
+            <li><a href="#section6"><span>Contact</span></a></li>
+        </ul>
+    </nav>
+
+    <section id="contents">
+        <div id="section1">
+            <div class="container">
+                <div class="section1">
+                    <h2>Pardon all but yourself</h2>
+                </div>
+            </div>
+        </div>
+        <div id="section2">
+            <div class="container">
+                <div class="section2">
+                    <h2>Better late than never</h2>
+                </div>
+            </div>
+        </div>
+        <div id="section3">
+            <div class="container">
+                <div class="section3">
+                    <h2>Naver, never, give up</h2>
+                </div>
+            </div>
+        </div>
+        <div id="section4">
+            <div class="container">
+                <div class="section4">
+                    <h2>Who dares, Wins</h2>
+                </div>
+            </div>
+        </div>
+        <div id="section5">
+            <div class="container">
+                <div class="section5">
+                    <h2>Shor out "once more"</h2>
+                </div>
+            </div>
+        </div>
+        <div id="section6">
+            <div class="container">
+                <div class="section6">
+                    <h2>Big goals gets big result</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        var moveScroll;
+        var lastScrollTop = 0;
+        var delta = 5;
+        var navbarHeight = $('#nav').outerHeight();
+
+        $(window).scroll(function(event) {
+            moveScroll = true;
+        });
+
+        setInterval(function() {
+            if (moveScroll) {
+                hasScrolled();
+                moveScroll = false;
+            }
+        }, 250);
+
+        function hasScrolled() {
+            var wScroll = $(this).scrollTop(); //현재 스크롤 값
+
+            if (Math.abs(lastScrollTop - wScroll) <= delta)
+                return;
+
+            if (wScroll > lastScrollTop && wScroll > navbarHeight) {
+                //스크롤 내렸을 때 nav-up 생기게
+                $("#nav").removeClass("nav-down").addClass("nav-up");
+            } else {
+                //스크롤 올렸을 때 nav-down 생기게
+                if (wScroll + $(window).height() < $(document).height()) {
+                    $("#nav").removeClass("nav-up").addClass("nav-down");
+                }
+            }
+
+            lastScrollTop = wScroll;
+        }
+    </script>
+</body>
+</html>
