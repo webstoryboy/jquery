@@ -22,6 +22,12 @@ Parallax site example
 
 4. Parallax - Text Animation : https://webstoryboy.github.io/jquery/parallax04.html
 
+   Parallax - animate.css : https://webstoryboy.github.io/jquery/parallax04-1.html
+   
+   Parallax - Text letter Animation(CSS) : https://webstoryboy.github.io/jquery/parallax04-2.html
+   
+   Parallax - Text letter Animation(jQuery) : https://webstoryboy.github.io/jquery/parallax04-3.html
+
 5. Parallax - Scroll Indicator : https://webstoryboy.github.io/jquery/parallax05.html
 
 

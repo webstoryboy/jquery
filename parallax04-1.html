@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Vidaloka');
+        /* font-family: 'Vidaloka', serif; */
+
+        /* reset */
+
+        * {
+            margin: 0;
+            padding: 0
+        }
+
+        li,
+        ul {
+            list-style: none
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        /* dot */
+
+        #dot {
+            position: fixed;
+            right: 20px;
+            top: 50%;
+            z-index: 1000;
+            transform: translatey(-50%);
+        }
+
+        #dot li {
+            position: relative;
+            display: block;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            margin: 8px;
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0);
+            transition: box-shadow 0.3s ease;
+        }
+
+        #dot li a {
+            background-color: rgba(255, 255, 255, 0.7);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            outline: none;
+            border-radius: 50%;
+            background-color: #fff;
+            background-color: rgba(255, 255, 255, 0.3);
+            text-indent: -999em;
+            cursor: pointer;
+            position: absolute;
+        }
+
+        #dot li.active {
+            box-shadow: 0 0 0 2px white;
+        }
+
+        #dot li.active a {
+            transform: scale(0.4);
+        }
+
+        #dot li a em {
+            opacity: 0;
+            position: absolute;
+            right: 37px;
+            top: -7px;
+            background: rgba(0, 0, 0, 0.55);
+            color: #fff;
+            padding: 8px 14px 5px 14px;
+            display: block;
+            transition: all 0.3s ease;
+            opacity: 0;
+        }
+
+        /* contents */
+
+        #contents {
+            font-size: 40px;
+            color: #fff;
+            text-align: center;
+            font-family: 'Vidaloka', serif;
+            font-style: italic;
+        }
+
+        #contents>div {
+            position: relative;
+            height: 100vh;
+            line-height: 100vh;
+        }
+
+        /* section */
+
+        #section1 {
+            background: linear-gradient(135deg, #f54ea2, #ff7676);
+        }
+
+        #section2 {
+            background: linear-gradient(135deg, #b1ea4d, #459522);
+        }
+
+        #section3 {
+            background: linear-gradient(135deg, #65799b, #5e2563);
+        }
+
+        #section4 {
+            background: linear-gradient(135deg, #eb3941, #f15e64, #e2373f);
+        }
+
+        #section5 {
+            background: linear-gradient(135deg, #FD6E6A, #FFC600);
+        }
+
+        #section6 {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+        }
+
+        #contents #section1 h2 {
+            opacity: 0;
+            transition: all 0.75s ease-in-out;
+        }
+
+        #contents #section2 h2 {
+            opacity: 0;
+            transition: all 0.75s ease-in-out;
+        }
+
+        #contents #section3 h2 {
+            opacity: 0;
+            transition: all 0.75s ease-in-out;
+        }
+
+        #contents #section4 h2 {
+            opacity: 0;
+            transition: all 0.75s ease-in-out;
+        }
+
+        #contents #section5 h2 {
+            opacity: 0;
+            transition: all 0.75s ease-in-out;
+        }
+
+        #contents #section6 h2 {
+            opacity: 0;
+            transition: all 0.75s ease-in-out;
+        }
+
+        #contents #section1.show h2 {
+            opacity: 1;
+            animation: bounceInRight 1s 1 ease-in-out;
+        }
+
+        #contents #section2.show h2 {
+            opacity: 1;
+            animation: wobble 1s 1 ease-in-out;
+        }
+
+        #contents #section3.show h2 {
+            opacity: 1;
+            animation: tada 1s 1 ease-in-out;
+        }
+
+        #contents #section4.show h2 {
+            opacity: 1;
+            animation: slideOutUp 1s 1 ease-in-out;
+        }
+
+        #contents #section5.show h2 {
+            opacity: 1;
+            animation: flipInX 1s 1 ease-in-out;
+        }
+
+        #contents #section6.show h2 {
+            opacity: 1;
+            animation: zoomInUp 1s 1 ease-in-out;
+        }
+
+        @keyframes bounceInRight {
+            0%,
+            60%,
+            75%,
+            90%,
+            100% {
+                animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+            }
+            0% {
+                opacity: 0;
+                transform: translate3d(3000px, 0, 0);
+            }
+            60% {
+                opacity: 1;
+                transform: translate3d(-25px, 0, 0);
+            }
+            75% {
+                transform: translate3d(10px, 0, 0);
+            }
+            90% {
+                transform: translate3d(-5px, 0, 0);
+            }
+            100% {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        @keyframes wobble {
+            0% {
+                transform: translate3d(0, 0, 0);
+            }
+            15% {
+                transform: translate3d(-25%, 0, 0) rotate3d(0, 0, 1, -5deg);
+            }
+            30% {
+                transform: translate3d(20%, 0, 0) rotate3d(0, 0, 1, 3deg);
+            }
+            45% {
+                transform: translate3d(-15%, 0, 0) rotate3d(0, 0, 1, -3deg);
+            }
+            60% {
+                transform: translate3d(10%, 0, 0) rotate3d(0, 0, 1, 2deg);
+            }
+            75% {
+                transform: translate3d(-5%, 0, 0) rotate3d(0, 0, 1, -1deg);
+            }
+            100% {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        @keyframes tada {
+            0% {
+                transform: scale3d(1, 1, 1);
+            }
+            10%,
+            20% {
+                transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+            }
+            30%,
+            50%,
+            70%,
+            90% {
+                transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+            }
+            40%,
+            60%,
+            80% {
+                transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+            }
+            100% {
+                transform: scale3d(1, 1, 1);
+            }
+        }
+
+        @keyframes slideOutUp {
+            0% {
+                transform: translate3d(0, 0, 0);
+            }
+            100% {
+                visibility: hidden;
+                transform: translate3d(0, -100%, 0);
+            }
+        }
+
+        @keyframes flipInX {
+            0% {
+                transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+                animation-timing-function: ease-in;
+                opacity: 0;
+            }
+            40% {
+                transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+                animation-timing-function: ease-in;
+            }
+            60% {
+                transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+                opacity: 1;
+            }
+            80% {
+                transform: perspective(400px) rotate3d(1, 0, 0, -5deg);
+            }
+            100% {
+                transform: perspective(400px);
+            }
+        }
+
+        @keyframes zoomInUp {
+            0% {
+                opacity: 0;
+                transform: scale3d(0.1, 0.1, 0.1) translate3d(0, 1000px, 0);
+                animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+            }
+            60% {
+                opacity: 1;
+                transform: scale3d(0.475, 0.475, 0.475) translate3d(0, -60px, 0);
+                animation-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="dot">
+        <ul>
+            <li class="active"><a href="#"><em>Intro</em></a></li>
+            <li><a href="#"><em>Skill</em></a></li>
+            <li><a href="#"><em>Website</em></a></li>
+            <li><a href="#"><em>Work</em></a></li>
+            <li><a href="#"><em>About</em></a></li>
+            <li><a href="#"><em>Contact</em></a></li>
+        </ul>
+    </nav>
+
+    <section id="contents">
+        <div id="section1">
+            <div class="container">
+                <div class="sec1">
+                    <h2>Every wall is a door.</h2>
+                </div>
+            </div>
+        </div>
+        <div id="section2">
+            <div class="container">
+                <div class="sec2">
+                    <h2>Love conquers all. </h2>
+                </div>
+            </div>
+        </div>
+        <div id="section3">
+            <div class="container">
+                <div class="sec3">
+                    <h2>Never say never.</h2>
+                </div>
+            </div>
+        </div>
+        <div id="section4">
+            <div class="container">
+                <div class="sec4">
+                    <h2>Don't dream it, be it.</h2>
+                </div>
+            </div>
+        </div>
+        <div id="section5">
+            <div class="container">
+                <div class="sec5">
+                    <h2>Do it Now!</h2>
+                </div>
+            </div>
+        </div>
+        <div id="section6">
+            <div class="container">
+                <div class="sec6">
+                    <h2>Practice makes perfect.</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script>
+        var dot = $("#dot ul li");
+        var contents = $("#contents > div");
+
+        dot.click(function(e) {
+            e.preventDefault();
+            var target = $(this);
+            var index = target.index();
+            var section = contents.eq(index);
+            var offset = section.offset().top;
+            $("html,body").animate({
+                scrollTop: offset
+            }, 600, "easeInOutExpo");
+        });
+
+        $(window).scroll(function() {
+            var wScroll = $(this).scrollTop();
+
+            if (wScroll >= contents.eq(0).offset().top) {
+                dot.removeClass("active");
+                dot.eq(0).addClass("active");
+            }
+            if (wScroll >= contents.eq(1).offset().top) {
+                dot.removeClass("active");
+                dot.eq(1).addClass("active");
+            }
+            if (wScroll >= contents.eq(2).offset().top) {
+                dot.removeClass("active");
+                dot.eq(2).addClass("active");
+            }
+            if (wScroll >= contents.eq(3).offset().top) {
+                dot.removeClass("active");
+                dot.eq(3).addClass("active");
+            }
+            if (wScroll >= contents.eq(4).offset().top) {
+                dot.removeClass("active");
+                dot.eq(4).addClass("active");
+            }
+            if (wScroll >= contents.eq(5).offset().top) {
+                dot.removeClass("active");
+                dot.eq(5).addClass("active");
+            }
+
+            if (wScroll >= contents.eq(0).offset().top - $(window).height() / 3) {
+                contents.eq(0).addClass("show");
+            }
+            if (wScroll >= contents.eq(1).offset().top - $(window).height() / 3) {
+                contents.eq(1).addClass("show");
+            }
+            if (wScroll >= contents.eq(2).offset().top - $(window).height() / 3) {
+                contents.eq(2).addClass("show");
+            }
+            if (wScroll >= contents.eq(3).offset().top - $(window).height() / 3) {
+                contents.eq(3).addClass("show");
+            }
+            if (wScroll >= contents.eq(4).offset().top - $(window).height() / 3) {
+                contents.eq(4).addClass("show");
+            }
+            if (wScroll >= contents.eq(5).offset().top - $(window).height() / 3) {
+                contents.eq(5).addClass("show");
+            }
+        });
+    </script>
+</body>
+</html>
