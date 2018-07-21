@@ -1,6 +1,8 @@
-# jquery
+# Parallax
 
-Parallax site example
+http://wtss.tistory.com/category/Parallax
+
+<h3>Parallax site example</h3>
 
 1. Parallax - Basic : https://webstoryboy.github.io/jquery/parallax01.html
 
