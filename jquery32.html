@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+
+<h2>내용 필터 선택자</h2>
+<p>콘텐츠와 관련된 요소를 선택하는 방법입니다.</p>
+
+<hr>
+
+<h3>내용 필터 선택자(Content Filters)</h3>
+
+<h5>내용 필터 선택자</h5>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>종류</th>
+                <th>설명</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>:contains()</td>
+                <td>()안의 텍스트와 일치하는 문자열이 요소의 내용 중에 있을 때 그 요소를 반환합니다.</td>
+            </tr>
+            <tr>
+                <td>:empty</td>
+                <td>요소에 텍스트 없을 때 선택됩니다.</td>
+            </tr>
+            <tr>
+                <td>:has()</td>
+                <td>요소 내부에서 찾고 싶은 태그를 후손 요소까지 살펴본 후 요소가 있으면 반환합니다.</td>
+            </tr>
+            <tr>
+                <td>:parent</td>
+                <td>empty와 반대로 요소에 텍스트가 존재할 때에 선택됩니다.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+   
+   
+<h5>Sample : 내용 필터 선택자</h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;제이쿼리(jQuery)&lt;/title&gt;
+        &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"&gt;&lt;/script&gt;
+        &lt;script type="text/javascript"&gt;
+		$(document).ready(function(){        
+            //$(".list li:contains('web')").css({ backgroundColor:"#9ab92e", border:"1px dashed #01584d" });  
+			//$(".list ul:has('li')").css({ backgroundColor:"#9ab92e", border:"1px dashed #01584d" }); 
+			//$(".list li:empty").text("jquery").css({ backgroundColor:"#9ab92e", border:"1px dashed #01584d"});  
+			$(".list li:parent").css({ backgroundColor:"#9ab92e", border:"1px dashed #01584d" });    
+        }); 
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+		&lt;h3&gt;기본 태그를 선택하는 방법&lt;/h3&gt;
+		&lt;div class="list"&gt;
+			&lt;ul class="list2"&gt;
+				&lt;li class="one1"&gt;web&lt;/li&gt;
+				&lt;li class="one2"&gt;one2&lt;/li&gt;
+				&lt;li class="one3"&gt;one3&lt;/li&gt;
+				&lt;li class="one4"&gt;one4&lt;/li&gt;
+				&lt;li class="one5"&gt;one5&lt;/li&gt;
+				&lt;li class="one6"&gt;one6&lt;/li&gt;
+				&lt;li class="one7"&gt;one7&lt;/li&gt;
+				&lt;li class="one8"&gt;one8&lt;/li&gt;
+				&lt;li id="one10"&gt;one9&lt;/li&gt;
+			&lt;/ul&gt;
+			&lt;ul class="list3"&gt;
+				&lt;li class="one1"&gt;&lt;/li&gt;
+				&lt;li class="one2"&gt;one2&lt;/li&gt;
+				&lt;li class="one3"&gt;one3&lt;/li&gt;
+				&lt;li class="one4"&gt;one4&lt;/li&gt;
+				&lt;li class="one5"&gt;one5&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;  
+	&lt;/body&gt;
+&lt;/html&gt;  
+</code></pre>
+   
+
+    
+</body>
+</html>

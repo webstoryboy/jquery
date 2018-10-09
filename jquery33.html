@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+
+<h2>보임 필터 선택자</h2>
+<p>화면에 보이거나 보이지 않는 요소를 찾습니다.</p>
+
+<hr>
+
+<h3>보임 필터 선택자(Visibility Filters)</h3>
+<p>visibility:hidden;이나 opacity:0;은 위치가 제거되지 않았기 때문에 :hidden 선택자에게 선택되지 않습니다.</p>
+
+<h5>컨텐츠를 보이지 않게 하는 방법</h5>
+<ul>
+    <li>display:none;</li>
+    <li>visibility:hidden;</li>
+    <li>opacity:0;</li>
+    <li>width:0; height:0;</li>
+    <li>form 요소 중에 type="hidden"</li>
+    <li>부모 요소가 보이지 않거나 숨겨져 있을 때</li>
+</ul>
+
+<h5>보임 필터 선택자</h5>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>종류</th>
+                <th>설명</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>:hidden</td>
+                <td>보이지 않는 요소를 선택합니다.</td>
+            </tr>
+            <tr>
+                <td>:visible</td>
+                <td>보이는 요소를 선택합니다.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+   
+   
+<h5>Sample : 보임 필터 선택자</h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;제이쿼리(jQuery)&lt;/title&gt;
+        &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"&gt;&lt;/script&gt;
+        &lt;script type="text/javascript"&gt;
+			function show( ){
+				$("li:hidden").show(1000);
+			};
+			setTimeout("show()" ,1000);  
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+		&lt;h3&gt;기본 태그를 선택하는 방법&lt;/h3&gt;
+		&lt;div class="list"&gt;
+			&lt;ul class="list2"&gt;
+				&lt;li class="one1" style="display: none;"&gt;web&lt;/li&gt;
+				&lt;li class="one2" style="opacity:0;"&gt;one2&lt;/li&gt;
+				&lt;li class="one3" style="visibility:hidden;"&gt;one3&lt;/li&gt;
+				&lt;li class="one4"&gt;one4&lt;/li&gt;
+				&lt;li class="one5"&gt;one5&lt;/li&gt;
+				&lt;li class="one6"&gt;one6&lt;/li&gt;
+				&lt;li class="one7"&gt;one7&lt;/li&gt;
+				&lt;li class="one8"&gt;one8&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+	&lt;/body&gt;
+&lt;/html&gt;  
+</code></pre>
+   
+
+    
+</body>
+</html>

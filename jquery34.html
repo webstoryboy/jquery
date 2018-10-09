@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+
+<h2>자식 요소 필터 선택자</h2>
+<p>자식 요소들을 선택 하는 방법입니다.</p>
+
+<hr>
+
+<h3>자식 요소 필터 선택자(Child Filters)</h3>
+
+
+
+<h5>자식 요소 필터 선택자</h5>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>종류</th>
+                <th>설명</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>:first-child</td>
+                <td>첫 번째 자식 요소를 선택합니다.</td>
+            </tr>
+            <tr>
+                <td>:last-child</td>
+                <td>마지막 번째 자식 요소를 선택합니다.</td>
+            </tr>
+            <tr>
+                <td>:first-of-type</td>
+                <td>자식 중 첫 번째 유형의 자식 요소를 선택합니다.</td>
+            </tr>
+            <tr>
+                <td>:last-of-type</td>
+                <td>자식 중 마지막 번째 유형의 자식 요소를 선택합니다.</td>
+            </tr>
+            <tr>
+                <td>:nth-child()</td>
+                <td>index번째에 있는 자식 요소를 선택합니다.</td>
+            </tr>
+            <tr>
+                <td>:nth-last-child()</td>
+                <td>index번째에 있는 마지막 자식 요소를 선택합니다.</td>
+            </tr>
+            <tr>
+                <td>:nth-last-of-type()</td>
+                <td>index번째에 있는 마지막 유형의 자식 요소를 선택합니다.</td>
+            </tr>
+            <tr>
+                <td>:nth-of-type()</td>
+                <td>index번째에 있는 유형의 자식 요소를 선택합니다.</td>
+            </tr>
+            <tr>
+                <td>:only-child</td>
+                <td>자식 요소가 오직 하나인 요소를 선택합니다.</td>
+            </tr>
+            <tr>
+                <td>:only-of-type()</td>
+                <td>자식 요소 중 오직 하나 유형인 요소를 선택합니다.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+   
+   
+<h5>Sample : 보임 필터 선택자</h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;제이쿼리(jQuery)&lt;/title&gt;
+        &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"&gt;&lt;/script&gt;
+        &lt;script type="text/javascript"&gt;
+			$(document).ready(function(){
+				$("li:first-child").css({ backgroundColor:"#9ab92e", border:"1px dashed #01584d" });
+				$("li:first").css({ backgroundColor:"#9ab92e", border:"1px dashed #01584d" });
+				$("li:last-child").css({ backgroundColor:"#9ab92e", border:"1px dashed #01584d" });
+				$("li:last").css({ backgroundColor:"#9ab92e", border:"1px dashed #01584d" });
+				$("li:nth-child(3)").css({ backgroundColor:"#9ab92e", border:"1px dashed #01584d" });
+				$("li:nth-child(even)").css({ backgroundColor:"#9ab92e", border:"1px dashed #01584d" });
+				$("li:nth-child(odd)").css({ backgroundColor:"#9ab92e", border:"1px dashed #01584d" });
+				$("li:nth-child(2n)").css({ backgroundColor:"#9ab92e", border:"1px dashed #01584d" });
+				$("li:nth-child(2n+1)").css({ backgroundColor:"#9ab92e", border:"1px dashed #01584d" });
+				$("li:only-child").css({ backgroundColor:"#9ab92e", border:"1px dashed #01584d" });
+			});
+		
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+		&lt;h3&gt;기본 태그를 선택하는 방법&lt;/h3&gt;
+		&lt;div class="list"&gt;
+			&lt;ul&gt;
+				&lt;li class="one1"&gt;one1&lt;/li&gt;
+				&lt;li class="one2"&gt;one2&lt;/li&gt;
+				&lt;li class="one3"&gt;one3&lt;/li&gt;
+				&lt;li class="one4"&gt;one4&lt;/li&gt;
+				&lt;li class="one5"&gt;one5&lt;/li&gt;
+				&lt;li class="one6"&gt;one6&lt;/li&gt;				
+				&lt;li class="one7"&gt;one7&lt;/li&gt;
+				&lt;li class="one8"&gt;one8&lt;/li&gt;
+				&lt;li class="one9"&gt;one9&lt;/li&gt;
+				&lt;li id="one10"&gt;one10
+					&lt;ul&gt;
+						&lt;li&gt;one10-1&lt;img src="../css.png" alt="이미지"&gt;&lt;/li&gt;
+						&lt;li&gt;one10-2&lt;img src="../html5.png"&gt;&lt;/li&gt;
+						&lt;li&gt;one10-1&lt;/li&gt;
+					&lt;/ul&gt;
+				&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+	&lt;/body&gt;
+&lt;/html&gt;   
+</code></pre>
+   
+
+    
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    
+    
+
+<h2>기본 필터 선택자</h2>
+<p>필터는 선태자 앞에 :(콜론)을 붙어 표현을 하며, 필터를 사용해 다양한 조건에 따라 선택할 수 있습니다.</p>
+
+<hr>
+
+<h3>기본 필터 선택자(Basic Filters)</h3>
+
+<h5>기본 필터 선택자</h5>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>종류</th>
+                <th>설명</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>:animated</td>
+                <td>show, hide, slideDown, slideUp등의 애니메이션 태그를 선택합니다.</td>
+            </tr>
+            <tr>
+                <td>:eq(index)</td>
+                <td>선택된 태그들의 인덱스 번호를 통해 선택합니다.</td>
+            </tr>
+            <tr>
+                <td>:gt(index)</td>
+                <td>선택된 집합에서 인덱스보다 큰 인덱스를 가지고 있는 태그들을 선택합니다.</td>
+            </tr>
+            <tr>
+                <td>:lt(index)</td>
+                <td>선택된 집합에서 인덱스보다 작은 인덱스를 가지고 있는 태그들을 선택합니다.</td>
+            </tr>
+            <tr>
+                <td>:header</td>
+                <td>제목 요소(h1~h6) 태그들을 선택합니다.</td>
+            </tr>
+            <tr>
+                <td>:first</td>
+                <td>선택된 요소 중에서 첫 번째 요소를 찾아 선택합니다.</td>
+            </tr>
+            <tr>
+                <td>:last</td>
+                <td>선택된 요소 중에서 마지막 번째 요소를 찾아 선택합니다.</td>
+            </tr>
+            <tr>
+                <td>:odd</td>
+                <td>선택된 요소 중에서 홀수 번째 요소를 찾아 선택합니다.</td>
+            </tr>
+            <tr>
+                <td>:even</td>
+                <td>선택된 요소 중에서 짝수 번째 요소를 찾아 선택합니다.</td>
+            </tr>
+            <tr>
+                <td>:not()</td>
+                <td>현재 선택한 요소의 반대 요소를 선택합니다.</td>
+            </tr>
+            <tr>
+                <td>:root()</td>
+                <td>문서의 가장 기본 루트 태그를 선택합니다.</td>
+            </tr>
+            <tr>
+                <td>:lang()</td>
+                <td>선택된 요소 중에서 언어 속성을 선택합니다.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+   
+   
+<h5>Sample : 기본 필터 선택자</h5>
+<pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+    &lt;head&gt;
+        &lt;meta charset="UTF-8"&gt;
+        &lt;title&gt;제이쿼리(jQuery)&lt;/title&gt;
+        &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"&gt;&lt;/script&gt;
+        &lt;script type="text/javascript"&gt;
+		$(document).ready(function(){        
+            //$(".list li:eq(6)").css({ backgroundColor:"#9ab92e", border:"1px dashed #01584d" }); 
+			//$(".list li:gt(5)").css({ backgroundColor:"#9ab92e", border:"1px dashed #01584d" }); 
+			//$(".list li:lt(5)").css({ backgroundColor:"#9ab92e", border:"1px dashed #01584d" }); 
+			//$(".list li:first").css({ backgroundColor:"#9ab92e", border:"1px dashed #01584d" });
+			//$(".list li:last").css({ backgroundColor:"#9ab92e", border:"1px dashed #01584d" });
+			//$(".list li:even").css({ backgroundColor:"#9ab92e", border:"1px dashed #01584d" });
+			//$(".list li:odd").css({ backgroundColor:"#00c8c3", border:"1px dashed #01584d" });
+			$(".list li:not(:eq(7))").css({ backgroundColor:"#9ab92e", border:"1px dashed #01584d" });  
+        }); 
+        &lt;/script&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+		&lt;h3&gt;기본 태그를 선택하는 방법&lt;/h3&gt;
+		&lt;div class="list"&gt;
+			&lt;ul class="list2"&gt;
+				&lt;li class="one1"&gt;one1&lt;/li&gt;
+				&lt;li class="one2"&gt;one2&lt;/li&gt;
+				&lt;li class="one3"&gt;one3&lt;/li&gt;
+				&lt;li class="one4"&gt;one4&lt;/li&gt;
+				&lt;li class="one5"&gt;one5&lt;/li&gt;
+				&lt;li class="one6"&gt;one6&lt;/li&gt;
+				&lt;li class="one7"&gt;one7&lt;/li&gt;
+				&lt;li class="one8"&gt;one8&lt;/li&gt;
+				&lt;li id="one10"&gt;one9&lt;/li&gt;
+			&lt;/ul&gt;
+			&lt;ul class="list3"&gt;
+				&lt;li class="one1"&gt;one1&lt;/li&gt;
+				&lt;li class="one2"&gt;one2&lt;/li&gt;
+				&lt;li class="one3"&gt;one3&lt;/li&gt;
+				&lt;li class="one4"&gt;one4&lt;/li&gt;
+				&lt;li class="one5"&gt;one5&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;   
+	&lt;/body&gt;
+&lt;/html&gt; 
+</code></pre>
+   
+
+    
+</body>
+</html>
