@@ -11,6 +11,140 @@
 <div>탐색은 제이쿼리의 선택자를 기준으로 선택한 요소에서 원하는 요소를 다시 한번 선택하는 메서드입니다. 탐색은 트리구조와 필터 영역을 나눌 수 있으며, 역할과 성질은 선택자와 비슷합니다.</div>    
    
 
-    
+<hr>
+   
+<h3 class="pt50">탐색(Traversing)</h3>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped">
+        <colgroup>
+            <col style="width:20%">
+            <col style="width:20%">
+            <col style="width:60%">
+        </colgroup>
+        <thead>
+            <tr>
+                <th>유형</th>
+                <th>메서드</th>
+                <th>설명</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td rowspan="13">트리구조 탐색(Tree Traversal)</td>
+                <td><a href="http://webzz.tistory.com/40">.children()</a></td>
+                <td>선택한 요소의 바로 아래 자식 요소만 선택합니다.</td>
+            </tr>
+            <tr>
+                <td><a href="http://webzz.tistory.com/41">.closest()</a></td>
+                <td>선택한 요소를 포함하면서 가장 가까운 상위 요소를 선택합니다.</td>
+            </tr>
+            <tr>
+                <td><a href="http://webzz.tistory.com/42">.find()</a></td>
+                <td>선택한 요소의 자식 요소 중 조건에 맞는 요소를 선택합니다.</td>
+            </tr>
+            <tr>
+                <td><a href="http://webzz.tistory.com/43">.next()</a></td>
+                <td>선택한 요소의 다음 요소를 선택합니다.</td>
+            </tr>
+            <tr>
+                <td><a href="http://webzz.tistory.com/44">.nextAll()</a></td>
+                <td>선택한 요소의 다음 모든 요소를 선택합니다.</td>
+            </tr>
+            <tr>
+                <td><a href="http://webzz.tistory.com/45">.nextUntil()</a></td>
+                <td>선택한 요소의 다음 요소 중 조건에 맞을 때까지 찾습니다.</td>
+            </tr>
+            <tr>
+                <td><a href="http://webzz.tistory.com/46">.parent()</a></td>
+                <td>선택한 요소의 부모 요소를 선택합니다.</td>
+            </tr>
+            <tr>
+                <td><a href="http://webzz.tistory.com/47">.parents()</a></td>
+                <td>선택한 요소의 모든 부모 요소를 선택합니다.</td>
+            </tr>
+            <tr>
+                <td><a href="http://webzz.tistory.com/48">.parentsUntil()</a></td>
+                <td>선택한 요소의 부모 요소 중 조건에 맞을 때까지 찾습니다.</td>
+            </tr>
+            <tr>
+                <td><a href="http://webzz.tistory.com/49">.prev()</a></td>
+                <td>선택한 요소의 이전 요소를 선택합니다.</td>
+            </tr>
+            <tr>
+                <td><a href="http://webzz.tistory.com/50">.prevAll()</a></td>
+                <td>선택한 요소의 이전 모든 요소를 선택합니다.</td>
+            </tr>
+            <tr>
+                <td><a href="http://webzz.tistory.com/88">.prevUntil()</a></td>
+                <td>선택한 요소의 이전 요소 중 조건에 맞을 때까지 찾습니다.</td>
+            </tr>
+            <tr>
+                <td><a href="http://webzz.tistory.com/89">.siblings()</a></td>
+                <td>선택한 요소의 형제 요소를 모두 찾습니다.</td>
+            </tr>
+            <tr>
+                <td rowspan="9">필터링(Filtering)</td>
+                <td><a href="http://webzz.tistory.com/90">.eq()</a></td>
+                <td>선택한 요소에 인덱스 번호에 해당하는 요소를 찾습니다.</td>
+            </tr>
+            <tr>
+                <td><a href="http://webzz.tistory.com/91">.filter()</a></td>
+                <td>선택된 요소에서 선택하거나 함수를 사용할 수 있습니다.</td>
+            </tr>
+            <tr>
+                <td><a href="http://webzz.tistory.com/92">.first()</a></td>
+                <td>선택된 요소에서 첫번째 자식 요소를 찾습니다.</td>
+            </tr>
+            <tr>
+                <td><a href="http://webzz.tistory.com/93">.has()</a></td>
+                <td>선택된 요소의 자식 요소에서 주어진 선택자를 찾습니다.</td>
+            </tr>
+            <tr>
+                <td><a href="http://webzz.tistory.com/94">.is()</a></td>
+                <td>선택된 요소 객체의 특징을 판별합니다.</td>
+            </tr>
+            <tr>
+                <td><a href="http://webzz.tistory.com/95">.last()</a></td>
+                <td>선택된 요소에서 마지막번째 자식 요소를 찾습니다.</td>
+            </tr>
+            <tr>
+                <td><a href="http://webzz.tistory.com/96">.map()</a></td>
+                <td>선택된 요소의 배열 집합을 새롭게 변경합니다.</td>
+            </tr>
+            <tr>
+                <td><a href="http://webzz.tistory.com/97">.not()</a></td>
+                <td>선택된 요소에서 조건에 맞지 않는 것을 선택합니다.</td>
+            </tr>
+            <tr>
+                <td><a href="http://webzz.tistory.com/98">.slice()</a></td>
+                <td>선택된 요소에서 조건의 범위로 재선택합니다.</td>
+            </tr>
+            <tr>
+                <td rowspan="5">기타(Miscellaneous Traversing)</td>
+                <td><a href="http://webzz.tistory.com/99">.add()</a></td>
+                <td>선택한 요소에 새로운 요소를 추가합니다.</td>
+            </tr>
+            <tr>
+                <td><a href="http://webzz.tistory.com/100">.addBack()</a></td>
+                <td>선택한 요소의 상위 요소도 같이 선택합니다.</td>
+            </tr>
+            <tr>
+                <td><a href="http://webzz.tistory.com/101">.contents()</a></td>
+                <td>선택한 요소와 일치하는 콘텐츠 요소를 선택합니다.</td>
+            </tr>
+            <tr>
+                <td><a href="http://webzz.tistory.com/102">.each()</a></td>
+                <td>선택한 여러 요소들을 각각 순차적으로 실행합니다.</td>
+            </tr>
+            <tr>
+                <td><a href="http://webzz.tistory.com/103">.end()</a></td>
+                <td>선택한 요소의 필터링이 일어나기 이전의 요소를 선택합니다.</td>
+            </tr>
+        </tbody>
+    </table>
+</div>	
+   
+   
+<hr>    
 </body>
 </html>

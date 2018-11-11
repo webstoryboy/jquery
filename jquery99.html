@@ -9,27 +9,270 @@
     
 
 <h2>.add()</h2>
-<p>선택한 요소에 새로운 요소를 추가합니다.</p>
+<p>선택된 요소와 새로운 요소에 추가로 선택합니다.</p>
 
 <hr>
 
 <h3>.add()</h3>
+<p class="blue">.add() 메서드는 선택된 요소와 새로운 요소를 추가적으로 효과를 줍니다. add()는 선택자, 객체, HTML 요소 등을 선택할 수 있습니다.</p>
 
-<h5>정의</h5>
-<p>선택된 요소에 selector, element, HTML, selection을 추가 할 수 있습니다.</p>
-
-
-<h5>문법</h5>
+<h4 class="pt50">문법(Syntax)</h4>
 <p class="blue">
-$("selector").add("selector");<br>
-$("selector").add("element");<br>
-$("selector").add("html");<br>
-$("selector").add("selection");<br>
+    $("선택자").add("선택자");<br>
+    $("선택자").add("태그");<br>
+    $("선택자").add("요소");<br>
 </p>
 
+<h4 class="pt50">정의(Definition)</h4>
+<ul>
+    <li>선택된 요소에서 선택자를 추가하여 효과를 줍니다. 또 다른 태그를 만든 것이 아니라 또 다른 효과를 주기위해 효과를 추가하는 것입니다.</li>
+    <li>선택된 요소에 추가적으로 태그를 추가하여 효과를 줄 수 있습니다.</li>
+</ul>
 
 
-   
+
+<!-- Sample1 -->
+<h4 class="pt50">샘플(Sample)</h4>
+<p>.add(selector) : li 선택자에 효과를 주고 추가적으로 자식 요소 span 태그에게 효과를 준 예제입니다.</p>
+<div class="sample">
+    <h5>Sample1<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="ex">
+        <!-- ex -->
+        <h3>탐색(Traversing)</h3>
+        <div class="list1">
+            <ul>
+                <li>.eq() 메서드는 선택한 요소에 인덱스 번호에 해당하는 요소를 찾습니다.</li>
+                <li>.filter() 메서드는 선택된 <span>요소</span>에서 선택하거나 함수를 사용할 수 있습니다.</li>
+                <li>.first() 메서드는 선택된 요소에서 첫번째 자식 요소를 찾습니다.</li>
+                <li>.has() 메서드는 선택된 요소의 자식 <span>요소</span>에서 주어진 선택자를 찾습니다.</li>
+                <li>.is() 메서드는 선택된 요소 객체의 특징을 판별합니다.</li>
+                <li>.last() 메서드는 선택된 요소에서 마지막 번째 자식 요소를 찾습니다.</li>
+            </ul>
+        </div>
+        <!-- ex -->
+    </div>
+    
+    <div class="choice1">
+        <a href="#" class="off1">리셋</a>
+        <a href="#" class="btn1">클릭하면 리스트<em>li</em>와 <em>span</em>에 효과를 줍니다.</a>
+    </div>
+</div>
+<!-- sample -->
+
+
+<div class="sample">
+    <h5>jquery<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="script on">
+        <pre class="line-numbers"><code class="language-javascript">$(".list1 li").addClass("rLine").find("span").add("p").addClass("bLine");</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html on">
+        <pre class="line-numbers"><code class="language-markup">&lt;h3&gt;탐색(Traversing)&lt;/h3&gt;
+&lt;div class="list1"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;.eq() 메서드는 선택한 요소에 인덱스 번호에 해당하는 요소를 찾습니다.&lt;/li&gt;
+        &lt;li&gt;.filter() 메서드는 선택된 &lt;span&gt;요소&lt;/span&gt;에서 선택하거나 함수를 사용할 수 있습니다.&lt;/li&gt;
+        &lt;li&gt;.first() 메서드는 선택된 요소에서 첫번째 자식 요소를 찾습니다.&lt;/li&gt;
+        &lt;li&gt;.has() 메서드는 선택된 요소의 자식 &lt;span&gt;요소&lt;/span&gt;에서 주어진 선택자를 찾습니다.&lt;/li&gt;
+        &lt;li&gt;.is() 메서드는 선택된 요소 객체의 특징을 판별합니다.&lt;/li&gt;
+        &lt;li&gt;.last() 메서드는 선택된 요소에서 마지막 번째 자식 요소를 찾습니다.&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>Total<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html on">
+        <pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery Sample&lt;/title&gt;
+    &lt;style&gt;
+        .bLine {padding: 4px 6px 2px 6px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color: #e7f6fd; border-radius: 4px;border: 1px dashed #3d90b7;}
+        .rLine {padding: 4px 4px 2px 10px; font-size: 90%; color: #c7254e; white-space: nowrap; background-color: #f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+    &lt;h3&gt;탐색(Traversing)&lt;/h3&gt;
+    &lt;div class="list1"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;.eq() 메서드는 선택한 요소에 인덱스 번호에 해당하는 요소를 찾습니다.&lt;/li&gt;
+            &lt;li&gt;.filter() 메서드는 선택된 &lt;span&gt;요소&lt;/span&gt;에서 선택하거나 함수를 사용할 수 있습니다.&lt;/li&gt;
+            &lt;li&gt;.first() 메서드는 선택된 요소에서 첫번째 자식 요소를 찾습니다.&lt;/li&gt;
+            &lt;li&gt;.has() 메서드는 선택된 요소의 자식 &lt;span&gt;요소&lt;/span&gt;에서 주어진 선택자를 찾습니다.&lt;/li&gt;
+            &lt;li&gt;.is() 메서드는 선택된 요소 객체의 특징을 판별합니다.&lt;/li&gt;
+            &lt;li&gt;.last() 메서드는 선택된 요소에서 마지막 번째 자식 요소를 찾습니다.&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="choice1"&gt;
+        &lt;a href="#" class="off1"&gt;리셋&lt;/a&gt;
+        &lt;a href="#" class="btn1"&gt;클릭하면 리스트&lt;em&gt;li&lt;/em&gt;와 &lt;em&gt;span&lt;/em&gt;에 효과를 줍니다.&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(".choice1 .off1").on("click", function(e){
+            e.preventDefault();
+            $(".list1 li").removeClass();
+        });
+        $(".choice1 .btn1").on("click", function(e){
+            e.preventDefault();
+            $(".list1 li").addClass("rLine").find("span").add("p").addClass("bLine");
+        });
+    &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+
+<script>
+    $(".choice1 .off1").on("click", function(e){
+        e.preventDefault();
+        $(".list1 li, .list1 li span").removeClass();
+    });
+    $(".choice1 .btn1").on("click", function(e){
+        e.preventDefault();
+        $(".list1 li").addClass("rLine").find("span").add("p").addClass("bLine");
+    });
+</script>
+<!-- //Sample1 -->
+
+
+
+
+
+
+
+<!-- Sample2 -->
+<h4 class="pt50">샘플(Sample)</h4>
+<p>.add(html) : ul을 <code>clone()</code>을 통해 복사하면서 추가적으로 태그를 이용하여 출력할 수 있는 예제입니다. 일반적으로 태그를 추가하여 만드는 메서드는 아니지만 이런식으로 복사한 요소에 추가적으로 태그 요소를 넣을 수 있습니다. <code>appendTo</code> 메서드를 이용하여 list 마지막에 복사한 ul과 p태그를 넣은 예제입니다.
+<div class="sample">
+    <h5>Sample2<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="ex">
+        <!-- ex -->
+        <h3>탐색(Traversing)</h3>
+        <div class="list2">
+            <ul>
+                <li>.eq() 메서드는 선택한 요소에 인덱스 번호에 해당하는 요소를 찾습니다.</li>
+                <li>.filter() 메서드는 선택된 요소에서 선택하거나 함수를 사용할 수 있습니다.</li>
+                <li>.first() 메서드는 선택된 요소에서 첫번째 자식 요소를 찾습니다.</li>
+                <li>.has() 메서드는 선택된 요소의 자식 요소에서 주어진 선택자를 찾습니다.</li>
+            </ul>
+        </div>
+        <!-- ex -->
+    </div>
+    
+    <div class="choice2">
+        <a href="#" class="off1">리셋</a>
+        <a href="#" class="btn1">클릭하면 리스트를 복사하여 출력합니다.</a>
+    </div>
+</div>
+<!-- sample -->
+
+
+<div class="sample">
+    <h5>jquery<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="script on">
+        <pre class="line-numbers"><code class="language-javascript">$(".list2 ul").clone().add("&lt;p class='bLine'&gt;마지막으로 추가&lt;/p&gt;").appendTo(".list2");</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html on">
+        <pre class="line-numbers"><code class="language-markup">&lt;h3&gt;탐색(Traversing)&lt;/h3&gt;
+&lt;div class="list2"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;.eq() 메서드는 선택한 요소에 인덱스 번호에 해당하는 요소를 찾습니다.&lt;/li&gt;
+        &lt;li&gt;.filter() 메서드는 선택된 요소에서 선택하거나 함수를 사용할 수 있습니다.&lt;/li&gt;
+        &lt;li&gt;.first() 메서드는 선택된 요소에서 첫번째 자식 요소를 찾습니다.&lt;/li&gt;
+        &lt;li&gt;.has() 메서드는 선택된 요소의 자식 요소에서 주어진 선택자를 찾습니다.&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>Total<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html on">
+        <pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery Sample&lt;/title&gt;
+    &lt;style&gt;
+        .bLine {padding: 4px 6px 2px 6px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color: #e7f6fd; border-radius: 4px;border: 1px dashed #3d90b7;}
+        .rLine {padding: 4px 4px 2px 10px; font-size: 90%; color: #c7254e; white-space: nowrap; background-color: #f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+    &lt;h3&gt;탐색(Traversing)&lt;/h3&gt;
+    &lt;div class="list2"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;.eq() 메서드는 선택한 요소에 인덱스 번호에 해당하는 요소를 찾습니다.&lt;/li&gt;
+            &lt;li&gt;.filter() 메서드는 선택된 요소에서 선택하거나 함수를 사용할 수 있습니다.&lt;/li&gt;
+            &lt;li&gt;.first() 메서드는 선택된 요소에서 첫번째 자식 요소를 찾습니다.&lt;/li&gt;
+            &lt;li&gt;.has() 메서드는 선택된 요소의 자식 요소에서 주어진 선택자를 찾습니다.&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="choice2"&gt;
+        &lt;a href="#" class="off1"&gt;리셋&lt;/a&gt;
+        &lt;a href="#" class="btn1"&gt;클릭하면 리스트&lt;em&gt;li&lt;/em&gt;와 &lt;em&gt;span&lt;/em&gt;에 효과를 줍니다.&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(".choice2 .off1").on("click", function(e){
+            e.preventDefault();
+            $(".list2 ul:eq(1), .list2 p").remove();
+        });
+        $(".choice2 .btn1").on("click", function(e){
+            e.preventDefault();
+            $(".list2 ul").clone().add("&lt;p class='bLine'&gt;마지막으로 추가&lt;/p&gt;").appendTo(".list2");
+        });
+    &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+
+<script>
+    $(".choice2 .off1").on("click", function(e){
+        e.preventDefault();
+        $(".list2 ul:eq(1), .list2 p").remove();
+    });
+    $(".choice2 .btn1").on("click", function(e){
+        e.preventDefault();
+        $(".list2 ul").clone().add("<p class='bLine'>마지막으로 추가</p>").appendTo(".list2");
+    });
+</script>
+<!-- //Sample2 -->
+
+
+
+<hr>
+ 
     
 </body>
 </html>

@@ -9,24 +9,162 @@
     
 
 <h2>.map()</h2>
-<p>선택된 요소의 배열 집합을 새롭게 변경합니다.</p>
+<p>선택된 요소에서 함수를 사용하여 새로운 집합을 만듭니다.</p>
 
 <hr>
 
 <h3>.map()</h3>
+<p class="blue">선택된 요소에서 함수를 사용하여 현재 매치되는 각각의 요소들을 새로운 제이쿼리 객체를 만들 수 있습니다. </p>
 
-<h5>정의</h5>
-<p>선택된 요소의 배열 집합을 새롭게 변경합니다.</p>
-
-
-<h5>문법</h5>
+<h4 class="pt50">문법(Syntax)</h4>
 <p class="blue">
-$("selector").map("callback");<br>
+    $("선택자").map("콜백함수");<br>
 </p>
 
+<h4 class="pt50">정의(Definition)</h4>
+<ul>
+    <li>이것은 jQuery.map()를 대신해서 사용 할 수 있으며, .get() 메서드와 같이 사용합니다. map() 메서드는 각 요소의 속성들을 가져 올 수 있습니다. 이것은 아래의 예제를 통해 확인 할 수 있습니다.</li>
+</ul>
 
 
-   
+<!-- Sample1 -->
+<h4 class="pt50">샘플(Sample)</h4>
+<p>.map(callback) : 콜백함수의 this는 현재 DOM를 참조합니다. 함수는 각각의 데이터 값을 가지고 오며, 데이터 값은 배열에 저장됩니다. 만약 null이나 undefined 값이 나온다면 각각의 데이터 값을 제대로 가지고 오지 않은 것입니다.</p>
+<div class="sample">
+    <h5>Sample1<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="ex">
+        <!-- ex -->
+        <h3>탐색(Traversing)</h3>
+        <div class="list1">
+            <ul>
+                <li id="select1">.eq() 메서드는 선택한 요소에 인덱스 번호에 해당하는 요소를 찾습니다.</li>
+                <li id="select2">.filter() 메서드는 선택된 요소에서 선택하거나 함수를 사용할 수 있습니다.</li>
+                <li id="select3">.first() 메서드는 선택된 요소에서 첫번째 자식 요소를 찾습니다.</li>
+                <li id="select4">.has() 메서드는 선택된 요소의 자식 요소에서 주어진 선택자를 찾습니다.</li>
+                <li id="select5">.is() 메서드는 선택된 요소 객체의 특징을 판별합니다.</li>
+                <li id="select6">.last() 메서드는 선택된 요소에서 마지막 번째 자식 요소를 찾습니다.</li>
+            </ul>
+            <p></p>
+        </div>
+        <!-- ex -->
+    </div>
+    
+    <div class="choice1">
+        <a href="#" class="off1">리셋</a>
+        <a href="#" class="btn1">클릭하면 각각의 아이디 값을 가져와 뿌려줍니다.</a>
+    </div>
+</div>
+<!-- sample -->
+
+
+<div class="sample">
+    <h5>jquery<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="script on">
+        <pre class="line-numbers"><code class="language-javascript">$(".choice1 .btn1").on("click", function(e){
+    e.preventDefault();
+    var a = $(".list1 li").map(function() {
+        return this.id;
+    }).get().join();
+    $(".list1 p").text(a);
+});</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html on">
+        <pre class="line-numbers"><code class="language-markup">&lt;h3&gt;탐색(Traversing)&lt;/h3&gt;
+&lt;div class="list1"&gt;
+    &lt;ul&gt;
+        &lt;li id="select1"&gt;.eq() 메서드는 선택한 요소에 인덱스 번호에 해당하는 요소를 찾습니다.&lt;/li&gt;
+        &lt;li id="select2"&gt;.filter() 메서드는 선택된 요소에서 선택하거나 함수를 사용할 수 있습니다.&lt;/li&gt;
+        &lt;li id="select3"&gt;.first() 메서드는 선택된 요소에서 첫번째 자식 요소를 찾습니다.&lt;/li&gt;
+        &lt;li id="select4"&gt;.has() 메서드는 선택된 요소의 자식 요소에서 주어진 선택자를 찾습니다.&lt;/li&gt;
+        &lt;li id="select5"&gt;.is() 메서드는 선택된 요소 객체의 특징을 판별합니다.&lt;/li&gt;
+        &lt;li id="select6"&gt;.last() 메서드는 선택된 요소에서 마지막 번째 자식 요소를 찾습니다.&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>Total<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html on">
+        <pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery Sample&lt;/title&gt;
+    &lt;style&gt;
+        .rLine {padding: 4px 4px 2px 10px; font-size: 90%; color: #c7254e; white-space: nowrap; background-color: #f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+    &lt;h3&gt;탐색(Traversing)&lt;/h3&gt;
+    &lt;div class="list1"&gt;
+        &lt;ul&gt;
+            &lt;li id="select1"&gt;.eq() 메서드는 선택한 요소에 인덱스 번호에 해당하는 요소를 찾습니다.&lt;/li&gt;
+            &lt;li id="select2"&gt;.filter() 메서드는 선택된 요소에서 선택하거나 함수를 사용할 수 있습니다.&lt;/li&gt;
+            &lt;li id="select3"&gt;.first() 메서드는 선택된 요소에서 첫번째 자식 요소를 찾습니다.&lt;/li&gt;
+            &lt;li id="select4"&gt;.has() 메서드는 선택된 요소의 자식 요소에서 주어진 선택자를 찾습니다.&lt;/li&gt;
+            &lt;li id="select5"&gt;.is() 메서드는 선택된 요소 객체의 특징을 판별합니다.&lt;/li&gt;
+            &lt;li id="select6"&gt;.last() 메서드는 선택된 요소에서 마지막 번째 자식 요소를 찾습니다.&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;p&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="choice1"&gt;
+        &lt;a href="#" class="off1"&gt;리셋&lt;/a&gt;
+        &lt;a href="#" class="btn1"&gt;클릭하면 각각의 아이디 값을 가져와 뿌려줍니다.&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(".choice1 .off1").on("click", function(e){
+            e.preventDefault();
+            $(".list1 p").text("");
+        });
+        $(".choice1 .btn1").on("click", function(e){
+            e.preventDefault();
+            var a = $(".list1 li").map(function() {
+                return this.id;
+            }).get().join();
+            $(".list1 p").text(a);
+        });
+    &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+
+<script>
+    $(".choice1 .off1").on("click", function(e){
+        e.preventDefault();
+        $(".list1 p").text("");
+    });
+    $(".choice1 .btn1").on("click", function(e){
+        e.preventDefault();
+        var a = $(".list1 li").map(function() {
+            return this.id;
+        }).get().join();
+        $(".list1 p").text(a);
+    });
+</script>
+<!-- //Sample1 -->
+
+
+
+
+<hr>
+ 
     
 </body>
 </html>
