@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Sample</title>
+    <style>
+        .select {color: #fff; height: 36px; min-width: 250px; margin-bottom: 10px; white-space: nowrap; font-size: inherit; border: 0 none; background: #444;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+</style>
+</head>
+<body>
+   
+    <h3>속성(Attributes)</h3>
+    <div class="list2">
+        SELECT :
+        <select name="select1" id="select1" class="select">
+            <option>.attr()</option>
+            <option>.prop()</option>
+            <option>.removeAttr()</option>
+            <option>.removeProp()</option>
+            <option>.val()</option>
+        </select>
+        <p class="desc"></p>
+    </div>
+    
+    <div class="choice2">
+        <a href="#" class="off1">리셋</a>
+        <a href="#" class="btn1">셀렉트 메뉴를 선택하고 클릭하면 select 박스의 값을 가져옵니다.</a>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(".list2 .desc").text( $( "#select1" ).val() );
+        
+        $(".choice2 .off1").click(function(e) {
+            e.preventDefault();
+            $(".list2 .desc").text( $( "#select1" ).val() );
+        });
+        $(".choice2 .btn1").click(function(e) {
+            e.preventDefault();
+            $(".list2 .desc").text( $( "#select1" ).val() );
+        });
+    </script>
+
+</body>
+</html>

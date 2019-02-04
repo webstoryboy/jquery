@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Sample</title>
+    <style>
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+    </style>
+</head>
+<body>
+    
+    <h3 class="h3">속성(Attributes)</h3>
+    <div class="list2">
+        <ul>
+            <li>.closest() 메서드는 선택한 요소의 상위 요소 중 가장 가까운 요소를 선택합니다.</li>
+            <li>.find() 메서드는 선택한 요소에서 조건에 맞는 요소를 다시 선택합니다.</li>
+            <li>.next() 메서드는 선택한 요소의 다음 요소를 선택합니다.</li>
+            <li>.nextAll() 메서드는 선택한 요소의 다음 요소를 선택합니다.</li>
+        </ul>
+    </div>
+    
+    <div class="choice2">
+        <a href="#" class="btn1"><em>h3 요소</em>를 마지막 요소(<em>appendTo</em>)에 추가합니다.</a>
+        <a href="#" class="btn2"><em>h3 요소</em>를 처음 요소(<em>prependTo</em>)에 추가합니다.</a>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(".choice2 .btn1").on("click", function(e){
+            e.preventDefault();
+            $(".h3").appendTo(".list2 ul");
+        });
+        $(".choice2 .btn2").on("click", function(e){
+            e.preventDefault();
+            $(".h3").prependTo(".list2 ul");
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

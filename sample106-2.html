@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Sample</title>
+    <style>
+        li {list-style: none;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+    </style>
+</head>
+<body>
+   
+    <h3>탐색(Traversing)</h3>
+    <div class="list2">
+        <ul>
+            <li><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" alt="img1" width="150" /></li>
+        </ul>
+    </div>
+    
+    <div class="choice2">
+        <a href="#" class="off1">리셋</a>
+        <a href="#" class="btn1">클릭하면 이미지의 크기를 <em>200</em>으로 변경합니다.</a>
+        <a href="#" class="btn2">클릭하면 이미지의 크기를 <em>300</em>으로 변경합니다.</a>
+        <a href="#" class="btn3">클릭하면 이미지의 크기를 <em>400</em>으로 변경합니다.</a>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(".choice2 .off1").on("click", function(e){
+            e.preventDefault();
+            $(".list2 img").attr("width","150");
+        });
+        $(".choice2 .btn1").on("click", function(e){
+            e.preventDefault();
+            $(".list2 img").attr("width","200");
+        });
+        $(".choice2 .btn2").on("click", function(e){
+            e.preventDefault();
+            $(".list2 img").attr("width","300");
+        });
+        $(".choice2 .btn3").on("click", function(e){
+            e.preventDefault();
+            $(".list2 img").attr("width","400");
+        });
+    </script>
+</body>
+</html>

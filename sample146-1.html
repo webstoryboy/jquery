@@ -1,0 +1,56 @@
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery Sample&lt;/title&gt;
+    &lt;style&gt;
+        .select1:before {content:'.select1'; padding: 4px 4px 2px 4px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color: #e7f6fd; border-radius: 4px;border: 1px dashed #3d90b7;}
+        .select2:before {content:'.select2'; padding: 4px 4px 2px 4px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color: #e7f6fd; border-radius: 4px;border: 1px dashed #3d90b7;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+    &lt;h3&gt;속성(Attributes)&lt;/h3&gt;
+    &lt;div class="list1"&gt;
+        &lt;ul&gt;
+            &lt;li class="select1"&gt;.children() 메서드는 선택한 요소의 모든 자식을 선택합니다.&lt;/li&gt;
+            &lt;li class="select2"&gt;.closest() 메서드는 선택한 요소의 상위 요소 중 가장 가까운 요소를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.find() 메서드는 선택한 요소에서 조건에 맞는 요소를 다시 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.next() 메서드는 선택한 요소의 다음 요소를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.nextAll() 메서드는 선택한 요소의 다음 요소를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.nextUntil() 메서드는 지정한 선택 요소의 모든 요소를 선택합니다.&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="choice1"&gt;
+        &lt;a href="#" class="btn1"&gt;클릭하면 select1의 &lt;em&gt;.html()&lt;/em&gt; 값을 경고창으로 알려줍니다.&lt;/a&gt;
+        &lt;a href="#" class="btn2"&gt;클릭하면 select2의 &lt;em&gt;.text()&lt;/em&gt; 값을 경고창으로 알려줍니다.&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(".choice1 .btn1").on("click", function(e){
+            e.preventDefault();
+            var htmlString = $(".list1 li:eq(0)").html();
+            alert (htmlString);
+        });
+        $(".choice1 .btn2").on("click", function(e){
+            e.preventDefault();
+            var textString = $(".list1 li:eq(1)").text();
+            alert (textString);
+        });
+    &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+
+
+
+
+
+
+
+
+
+

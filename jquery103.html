@@ -61,9 +61,15 @@
 <div class="sample">
     <h5>jquery<span class="dot"><i></i><i></i><i></i></span></h5>
     <div class="script on">
-        <pre class="line-numbers"><code class="language-javascript">$(".list1").find(".select1").addClass("bLine");
-$(".list1").find(".select3").addClass("rLine");
-$(".list1").find(".select1").addClass("bLine").end().find(".select3").addClass("rLine");</code></pre>
+        <pre class="line-numbers"><code class="language-javascript">$(".choice1 .btn1").on("click", function(e){
+    e.preventDefault();
+    $(".list1").find(".select1").addClass("bLine");
+    $(".list1").find(".select3").addClass("rLine");
+});
+$(".choice1 .btn2").on("click", function(e){
+    e.preventDefault();
+    $(".list1").find(".select1").addClass("bLine").end().find(".select3").addClass("rLine");
+});</code></pre>
     </div>
 </div>
 <!-- sample -->

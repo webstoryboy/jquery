@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Sample</title>
+    <style>
+        .input {min-width: 300px; height: 20px; padding: 5px 10px; margin: 10px; background: #f9f9f9; border:1px solid #dbdbdb; font-size: 14px; }
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+    </style>
+</head>
+<body>
+   
+    <h3>속성(Attributes)</h3>
+    <div class="list1">
+        INPUT :<input type="text" value="클릭하세요!" class="input">
+    </div>
+    
+    <div class="choice1">
+        <a href="#" class="off1">리셋</a>
+        <a href="#" class="btn1">클릭하면 input 박스에 글씨를 넣어줍니다.</a>
+        <a href="#" class="btn2">클릭하면 input 박스에 두번 째 글씨를 넣어줍니다.</a>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(".choice1 .off1").click(function(e) {
+            e.preventDefault();
+            $(".list1 .input").val( "클릭하세요!" );
+        });
+        $(".choice1 .btn1").click(function(e) {
+            e.preventDefault();
+            $(".list1 .input").val( $( this ).text() );
+        });
+        $(".choice1 .btn2").click(function(e) {
+            e.preventDefault();
+            $(".list1 .input").val( $( this ).text() );
+        });
+    </script>
+
+</body>
+</html>

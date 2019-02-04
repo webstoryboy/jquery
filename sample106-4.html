@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Sample</title>
+    <style>
+        li {list-style: none;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+    </style>
+</head>
+<body>
+   
+    <h3>탐색(Traversing)</h3>
+    <div class="list4">
+        <ul class="listNo">
+            <li><img title="hover01.jpg" alt="150" width="150" /></li>
+        </ul>
+        <p></p>
+    </div>
+    
+    <div class="choice4">
+        <a href="#" class="off1">리셋</a>
+        <a href="#" class="btn1">클릭하면 <em>title</em>값을 가지고와 <em>src</em>에 넣어줍니다.</a>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(".choice4 .off1").on("click", function(e){
+            e.preventDefault();
+            $(".list4 img").attr({"src":""});
+        });
+        $(".choice4 .btn1").on("click", function(e){
+            e.preventDefault();
+            $(".list4 img").attr("src", function(){
+                return "https://tistory1.daumcdn.net/tistory/2933724/skin/images/" + this.title;
+            });
+        });
+    </script>
+</body>
+</html>

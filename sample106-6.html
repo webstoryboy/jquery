@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Sample</title>
+    <style>
+        * {padding: 0; margin:0;}
+		li {list-style: none;}
+		a {text-decoration: none; color: #666;}
+		#tab-menu {width: 350px; margin:50px auto;}
+		.tab-btn {margin-bottom: 1px;  }
+		.tab-btn ul {overflow: hidden;}
+		.tab-btn li {float: left; width: 20%; text-align: center;}
+		.tab-btn li a {padding: 14px 10px 10px 10px ; display: block; background-color: #1e88e5; margin-right: 1px; color:#fff;}
+    </style>
+</head>
+<body>
+    
+    <h3>탐색(Traversing)</h3>
+    <div id="tab-menu">
+		<div class="tab-btn">
+			<ul>
+				<li><a href="#">Tab1</a></li>
+				<li><a href="#">Tab2</a></li>
+				<li><a href="#">Tab3</a></li>
+				<li><a href="#">Tab4</a></li>
+				<li><a href="#">Tab5</a></li>
+			</ul>
+		</div>
+		<div class="tab-cont">
+			<img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" width="350" alt="이미지1">
+		</div>
+	</div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+		//글씨를 클릭하면 tab --> menu로 변경해주세요.
+		// $(".tab-btn ul li").click(function(){
+		// 	$(".tab-btn ul li a").text("Menu");
+		// });
+		
+		//글씨를 클릭하면 tab3 --> menu3로 변경해주세요.
+		// $(".tab-btn ul li").click(function(){
+		// 	var target = $(this);
+		// 	var index = target.index()+1;
+		// 	//alert(index);
+		// 	target.find("a").text("Menu"+index);
+		// });
+		
+		//해당 버튼을 클릭하면 해당 이미지 나오게 하기
+		// var attr = $(".tab-cont img").attr("src");
+		// //alert(attr);
+		// $(".tab-btn ul li:eq(0)").click(function(){
+		// 	$(".tab-cont img").attr({ "src":"https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" , "alt":"이미지1" });
+		// });
+		// $(".tab-btn ul li:eq(1)").click(function(){
+		// 	$(".tab-cont img").attr({ "src":"https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover02.jpg" , "alt":"이미지2" });
+		// });
+		// $(".tab-btn ul li:eq(2)").click(function(){
+		// 	$(".tab-cont img").attr({ "src":"https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover03.jpg" , "alt":"이미지3" });
+		// });
+		// $(".tab-btn ul li:eq(3)").click(function(){
+		// 	$(".tab-cont img").attr({ "src":"https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" , "alt":"이미지5" });
+		// });
+		// $(".tab-btn ul li:eq(4)").click(function(){
+		// 	$(".tab-cont img").attr({ "src":"https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" , "alt":"이미지6" });
+		// });
+		
+		//한번에 쓰기
+		$(".tab-btn ul li").click(function(e){
+            e.preventDefault();
+			var target = $(this);
+			var index = target.index()+1;
+			//alert(index);
+			target.find("a").text("Menu"+index);
+			$(".tab-cont img").attr({"src":"https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover0"+index+".jpg","alt":"이미지"+index });
+		});
+	</script>
+	
+	
+	
+	
+	
+	
+</body>
+</html>

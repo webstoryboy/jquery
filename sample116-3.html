@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Sample</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        li {list-style: none;}
+        body {background: #f1f1f1;}
+        .select:before {padding: 4px 6px 2px 6px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color: #e7f6fd; border-radius: 4px;border: 1px dashed #3d90b7;}
+        .rLine {padding: 4px 4px 2px 10px; font-size: 90%; color: #c7254e; white-space: nowrap; background-color: #f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d;}
+        .accordion {width: 400px; margin: 50px auto; border-radius: 3px;}
+        .accordion ul { background: #fff;}
+        .accordion ul li {padding: 5px; border-bottom: 1px solid #ccc;}
+        .accordion ul li span {display: block; padding: 10px;}
+        .accordion ul li .submenu {display: none; background: #444359;}
+        .accordion ul li .submenu.on {display: block;}
+        
+    </style>
+</head>
+<body>
+    
+    <div class="accordion">
+        <ul>
+            <li><span>CSS</span>
+                <ul class="submenu">
+                    <li>.addClass()</li>
+                    <li>.css()</li>
+                    <li>.hasClass()</li>
+                    <li>.removeClass()</li>
+                    <li>.toggleClass()</li>
+                </ul>
+            </li>
+            <li><span>Dimensions</span>
+                <ul class="submenu">
+                    <li>.height()</li>
+                    <li>.innerHeight()</li>
+                    <li>.innerWidth()</li>
+                    <li>.outerHeight()</li>
+                    <li>.outerWidth()</li>
+                    <li>.width()</li>
+                </ul>
+            </li>
+            <li><span>offset</span>
+                <ul class="submenu">
+                    <li>.offset()()</li>
+                    <li>.offsetParent()</li>
+                    <li>.position()</li>
+                    <li>.scrollLeft()</li>
+                    <li>.scrollTop()</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(".accordion > ul > li span").click(function(){
+            $(this).next(".submenu").toggleClass("on");
+        });
+    </script>
+
+</body>
+</html>

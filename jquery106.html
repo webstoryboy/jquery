@@ -14,8 +14,18 @@
 <hr>
 
 <h3>.attr()</h3>
+<p class="blue">선택한 HTML 요소의 속성 값을 설정하거나 반환합니다.</p>
 
-<h5>정의</h5>
+
+<h4 class="pt50">문법(Syntax)</h4>
+<p class="blue">
+    $("선택자").attr("속성");<br>
+    $("선택자").attr("속성", "속성값");<br>
+    $("선택자").attr({"속성":"속성값", "속성":"속성값", .... });<br>
+    $("선택자").attr("속성", 함수);
+</p>
+
+<h4 class="pt50">정의(Definition)</h4>
 <ul>
     <li>.attr() 메서드는 선택한 요소의 속성 값을 가져옵니다.</li>
     <li>.attr() 메서드는 선택한 요소의 속성 값을 변경합니다.</li>
@@ -24,17 +34,879 @@
 </ul>
 
 
-<h5>문법</h5>
-<p class="blue">
-$("선택자").attr("속성");<br>
-$("선택자").attr("속성", "속성값");<br>
-$("선택자").attr({"속성":"속성값", "속성":"속성값", .... });<br>
-$("선택자").attr("속성", 함수);
-</p>
+
+<!-- Sample1 -->
+<h4 class="pt50">샘플(Sample)</h4>
+<p>.attr을 이용하여 속성 값을 알아냅니다.</p>
+<div class="sample">
+    <h5>Sample1<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="ex">
+        <!-- ex -->
+        <h3>탐색(Traversing)</h3>
+        <div class="list1">
+            <ul class="listNo">
+                <li><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" alt="img1" width="150" /></li>
+            </ul>
+            <p class="desc"></p>
+        </div>
+        <!-- ex -->
+    </div>
+    
+    <div class="choice1">
+        <a href="#" class="off1">리셋</a>
+        <a href="#" class="btn1">클릭하면 이미지의 <em>주소</em> 값을 가져옵니다.</a>
+        <a href="#" class="btn2">클릭하면 이미지의 <em>alt</em> 값을 가져옵니다.</a>
+        <a href="#" class="btn3">클릭하면 이미지의 <em>width</em> 값을 가져옵니다.</a>
+    </div>
+</div>
+<!-- sample -->
+
+
+<div class="sample">
+    <h5>jquery<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="script on">
+        <pre class="line-numbers"><code class="language-javascript">$(".choice1 .btn1").on("click", function(e){
+    e.preventDefault();
+    $(".list1 .desc").text( $(".list1 img").attr("src") );
+});
+$(".choice1 .btn2").on("click", function(e){
+    e.preventDefault();
+    $(".list1 .desc").text( $(".list1 img").attr("alt") );
+});
+$(".choice1 .btn3").on("click", function(e){
+    e.preventDefault();
+    $(".list1 .desc").text( $(".list1 img").attr("width") );
+});</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html">
+        <pre class="line-numbers"><code class="language-markup">&lt;h3&gt;탐색(Traversing)&lt;/h3&gt;
+&lt;div class="list1"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" alt="img1" width="150" /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p class="desc"&gt;&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>Total<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html on">
+        <pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery Sample&lt;/title&gt;
+    &lt;style&gt;
+        li {list-style: none;}
+        .select:before {padding: 4px 6px 2px 6px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color: #e7f6fd; border-radius: 4px;border: 1px dashed #3d90b7;}
+        .rLine {padding: 4px 4px 2px 10px; font-size: 90%; color: #c7254e; white-space: nowrap; background-color: #f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   
+    &lt;h3&gt;탐색(Traversing)&lt;/h3&gt;
+    &lt;div class="list1"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" alt="img1" width="150" /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;p class="desc"&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="choice1"&gt;
+        &lt;a href="#" class="off1"&gt;리셋&lt;/a&gt;
+        &lt;a href="#" class="btn1"&gt;클릭하면 이미지의 주소 값을 가져옵니다.&lt;/a&gt;
+        &lt;a href="#" class="btn2"&gt;클릭하면 이미지의 alt 값을 가져옵니다.&lt;/a&gt;
+        &lt;a href="#" class="btn3"&gt;클릭하면 이미지의 width 값을 가져옵니다.&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(".choice1 .off1").on("click", function(e){
+            e.preventDefault();
+            $(".list1 p").text("");
+        });
+        $(".choice1 .btn1").on("click", function(e){
+            e.preventDefault();
+            $(".list1 .desc").text( $(".list1 img").attr("src") );
+        });
+        $(".choice1 .btn2").on("click", function(e){
+            e.preventDefault();
+            $(".list1 .desc").text( $(".list1 img").attr("alt") );
+        });
+        $(".choice1 .btn3").on("click", function(e){
+            e.preventDefault();
+            $(".list1 .desc").text( $(".list1 img").attr("width") );
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+
+<script>
+    $(".choice1 .off1").on("click", function(e){
+        e.preventDefault();
+        $(".list1 p").text("");
+    });
+    $(".choice1 .btn1").on("click", function(e){
+        e.preventDefault();
+        $(".list1 .desc").text( $(".list1 img").attr("src") );
+    });
+    $(".choice1 .btn2").on("click", function(e){
+        e.preventDefault();
+        $(".list1 .desc").text( $(".list1 img").attr("alt") );
+    });
+    $(".choice1 .btn3").on("click", function(e){
+        e.preventDefault();
+        $(".list1 .desc").text( $(".list1 img").attr("width") );
+    });
+</script>
+<!-- //Sample1 -->
+
 
 
 
    
+   
+   
+
+
+<!-- Sample2 -->
+<h4 class="pt50">샘플(Sample)</h4>
+<p>.attr을 이용하여 속성 값을 변경합니다.</p>
+<div class="sample">
+    <h5>Sample2<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="ex">
+        <!-- ex -->
+        <h3>탐색(Traversing)</h3>
+        <div class="list2">
+            <ul class="listNo">
+                <li><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" alt="img1" width="150" /></li>
+            </ul>
+        </div>
+        <!-- ex -->
+    </div>
+    
+    <div class="choice2">
+        <a href="#" class="off1">리셋</a>
+        <a href="#" class="btn1">클릭하면 이미지의 크기를 <em>200</em>으로 변경합니다.</a>
+        <a href="#" class="btn2">클릭하면 이미지의 크기를 <em>300</em>으로 변경합니다.</a>
+        <a href="#" class="btn3">클릭하면 이미지의 크기를 <em>400</em>으로 변경합니다.</a>
+    </div>
+</div>
+<!-- sample -->
+
+
+<div class="sample">
+    <h5>jquery<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="script on">
+        <pre class="line-numbers"><code class="language-javascript">$(".choice2 .btn1").on("click", function(e){
+    e.preventDefault();
+    $(".list2 img").attr("width","200");
+});
+$(".choice2 .btn2").on("click", function(e){
+    e.preventDefault();
+    $(".list2 img").attr("width","300");
+});
+$(".choice2 .btn3").on("click", function(e){
+    e.preventDefault();
+    $(".list2 img").attr("width","400");
+});</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html">
+        <pre class="line-numbers"><code class="language-markup">&lt;h3&gt;탐색(Traversing)&lt;/h3&gt;
+&lt;div class="list2"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" alt="img1" width="150" /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>Total<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html on">
+        <pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery Sample&lt;/title&gt;
+    &lt;style&gt;
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+&lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   
+    &lt;h3&gt;속성(Attributes)&lt;/h3&gt;
+    &lt;div class="list1"&gt;
+        &lt;input id="check1" type="checkbox" checked="checked"&gt;
+        &lt;label for="check1"&gt;체크&lt;/label&gt;
+        &lt;p class="desc"&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="choice1"&gt;
+        &lt;a href="#" class="off1"&gt;리셋&lt;/a&gt;
+        &lt;a href="#" class="btn1"&gt;클릭하면 &lt;em&gt;.attr&lt;/em&gt;의 속성 값을 가져옵니다.&lt;/a&gt;
+        &lt;a href="#" class="btn2"&gt;클릭하면 &lt;em&gt;.prop&lt;/em&gt;의 속성 값을 가져옵니다.&lt;/a&gt;
+        &lt;a href="#" class="btn3"&gt;클릭하면 &lt;em&gt;.is&lt;/em&gt;의 속성 값을 가져옵니다.&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(".choice1 .off1").on("click", function(e){
+            e.preventDefault();
+            $(".list1 p").text("");
+        });
+        $(".choice1 .btn1").on("click", function(e){
+            e.preventDefault();
+            $( ".list1 input" ).change(function() {
+              var $input = $( this );
+              $(".list1 .desc").html( ".attr( \"checked\" ) : " + $input.attr("checked"))
+            }).change();
+        });
+        $(".choice1 .btn2").on("click", function(e){
+            e.preventDefault();
+            $( ".list1 input" ).change(function() {
+              var $input = $( this );
+              $(".list1 .desc").html( ".prop( \"checked\" ) : " + $input.prop("checked"))
+            }).change();
+        });
+        $(".choice1 .btn3").on("click", function(e){
+            e.preventDefault();
+            $( ".list1 input" ).change(function() {
+              var $input = $( this );
+              $(".list1 .desc").html( ".is( \"checked\" ) : " + $input.is(":checked"))
+            }).change();
+        });   
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+
+<script>
+$(".choice1 .off1").on("click", function(e){
+    e.preventDefault();
+    $(".list1 p").text("");
+});
+$(".choice1 .btn1").on("click", function(e){
+    e.preventDefault();
+    $( ".list1 input" ).change(function() {
+      var $input = $( this );
+      $(".list1 .desc").html( ".attr( \"checked\" ) : " + $input.attr("checked"))
+    }).change();
+});
+$(".choice1 .btn2").on("click", function(e){
+    e.preventDefault();
+    $( ".list1 input" ).change(function() {
+      var $input = $( this );
+      $(".list1 .desc").html( ".prop( \"checked\" ) : " + $input.prop("checked"))
+    }).change();
+});
+$(".choice1 .btn3").on("click", function(e){
+    e.preventDefault();
+    $( ".list1 input" ).change(function() {
+      var $input = $( this );
+      $(".list1 .desc").html( ".is( \"checked\" ) : " + $input.is(":checked"))
+    }).change();
+});   
+</script>
+<!-- //Sample2 -->
+
+
+
+  
+  
+  
+  
+
+
+<!-- Sample3 -->
+<h4 class="pt50">샘플(Sample)</h4>
+<p>.attr을 이용하여 여러 개의 속성 값을 변경합니다.</p>
+<div class="sample">
+    <h5>Sample3<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="ex">
+        <!-- ex -->
+        <h3>탐색(Traversing)</h3>
+        <div class="list3">
+            <ul class="listNo">
+                <li><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" alt="150" width="150" /></li>
+            </ul>
+            <p class="desc"></p>
+        </div>
+        <!-- ex -->
+    </div>
+    
+    <div class="choice3">
+        <a href="#" class="off1">리셋</a>
+        <a href="#" class="btn1">클릭하면 이미지의 <em>크기(200)</em>와 <em>alt(200)</em>값 변경합니다.</a>
+        <a href="#" class="btn2">클릭하면 이미지의 <em>크기(300)</em>와 <em>alt(300)</em>값 변경합니다.</a>
+    </div>
+</div>
+<!-- sample -->
+
+
+<div class="sample">
+    <h5>jquery<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="script on">
+        <pre class="line-numbers"><code class="language-javascript">$(".choice3 .btn1").on("click", function(e){
+    e.preventDefault();
+    $(".list3 img").attr({"width":"200" , "alt":"200"});
+    $(".list3 .desc").text( "이미지 width값 : "+$(".list3 img").attr("width") + " / " + "이미지 alt값 : "+$(".list3 img").attr("alt") );
+});
+$(".choice3 .btn2").on("click", function(e){
+    e.preventDefault();
+    $(".list3 img").attr({"width":"300" , "alt":"300"});
+    $(".list3 .desc").text( "이미지 width값 : "+$(".list3 img").attr("width") + " / " + "이미지 alt값 : "+$(".list3 img").attr("alt") );
+});</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html">
+        <pre class="line-numbers"><code class="language-markup">&lt;h3&gt;탐색(Traversing)&lt;/h3&gt;
+&lt;div class="list3"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" alt="150" width="150" /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p class="desc"&gt;&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>Total<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html on">
+        <pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery Sample&lt;/title&gt;
+    &lt;style&gt;
+        li {list-style: none;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   
+    &lt;h3&gt;탐색(Traversing)&lt;/h3&gt;
+    &lt;div class="list3"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" alt="150" width="150" /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;p class="desc"&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="choice3"&gt;
+        &lt;a href="#" class="off1"&gt;리셋&lt;/a&gt;
+        &lt;a href="#" class="btn1"&gt;클릭하면 이미지의 &lt;em&gt;크기(200)&lt;/em&gt;와 &lt;em&gt;alt(200)&lt;/em&gt;값 변경합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn2"&gt;클릭하면 이미지의 &lt;em&gt;크기(300)&lt;/em&gt;와 &lt;em&gt;alt(300)&lt;/em&gt;값 변경합니다.&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(".choice3 .off1").on("click", function(e){
+            e.preventDefault();
+            $(".list3 img").attr({"width":"150" , "alt":"150"});
+            $(".list3 .desc").text(" ");
+        });
+        $(".choice3 .btn1").on("click", function(e){
+            e.preventDefault();
+            $(".list3 img").attr({"width":"200" , "alt":"200"});
+            $(".list3 .desc").text( "이미지 width값 : "+$(".list3 img").attr("width") + " / " + "이미지 alt값 : "+$(".list3 img").attr("alt") );
+        });
+        $(".choice3 .btn2").on("click", function(e){
+            e.preventDefault();
+            $(".list3 img").attr({"width":"300" , "alt":"300"});
+            $(".list3 .desc").text( "이미지 width값 : "+$(".list3 img").attr("width") + " / " + "이미지 alt값 : "+$(".list3 img").attr("alt") );
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+
+<script>
+    $(".choice3 .off1").on("click", function(e){
+        e.preventDefault();
+        $(".list3 img").attr({"width":"150" , "alt":"150"});
+        $(".list3 .desc").text(" ");
+    });
+    $(".choice3 .btn1").on("click", function(e){
+        e.preventDefault();
+        $(".list3 img").attr({"width":"200" , "alt":"200"});
+        $(".list3 .desc").text( "이미지 width값 : "+$(".list3 img").attr("width") + " / " + "이미지 alt값 : "+$(".list3 img").attr("alt") );
+    });
+    $(".choice3 .btn2").on("click", function(e){
+        e.preventDefault();
+        $(".list3 img").attr({"width":"300" , "alt":"300"});
+        $(".list3 .desc").text( "이미지 width값 : "+$(".list3 img").attr("width") + " / " + "이미지 alt값 : "+$(".list3 img").attr("alt") );
+    });
+</script>
+<!-- //Sample3 -->
+
+   
+   
+   
+     
+
+
+<!-- Sample4 -->
+<h4 class="pt50">샘플(Sample)</h4>
+<p>함수를 사용하여 title 값은 src에 넣어주는 예제입니다.</p>
+<div class="sample">
+    <h5>Sample4<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="ex">
+        <!-- ex -->
+        <h3>탐색(Traversing)</h3>
+        <div class="list4">
+            <ul class="listNo">
+                <li><img title="hover01.jpg" alt="150" width="150" /></li>
+            </ul>
+            <p></p>
+        </div>
+        <!-- ex -->
+    </div>
+    
+    <div class="choice4">
+        <a href="#" class="off1">리셋</a>
+        <a href="#" class="btn1">클릭하면 <em>title</em>값을 가지고와 <em>src</em>에 넣어줍니다.</a>
+    </div>
+</div>
+<!-- sample -->
+
+
+<div class="sample">
+    <h5>jquery<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="script on">
+        <pre class="line-numbers"><code class="language-javascript">$(".choice4 .btn1").on("click", function(e){
+    e.preventDefault();
+    $(".list4 img").attr("src", function(){
+        return "https://tistory1.daumcdn.net/tistory/2933724/skin/images/" + this.title;
+    });
+});</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html">
+        <pre class="line-numbers"><code class="language-markup">&lt;h3&gt;탐색(Traversing)&lt;/h3&gt;
+&lt;div class="list4"&gt;
+    &lt;ul class="listNo"&gt;
+        &lt;li&gt;&lt;img title="hover01.jpg" alt="150" width="150" /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    &lt;p&gt;&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>Total<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html on">
+        <pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery Sample&lt;/title&gt;
+    &lt;style&gt;
+        li {list-style: none;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   
+    &lt;h3&gt;탐색(Traversing)&lt;/h3&gt;
+    &lt;div class="list4"&gt;
+        &lt;ul class="listNo"&gt;
+            &lt;li&gt;&lt;img title="hover01.jpg" alt="150" width="150" /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;p&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="choice4"&gt;
+        &lt;a href="#" class="off1"&gt;리셋&lt;/a&gt;
+        &lt;a href="#" class="btn1"&gt;클릭하면 &lt;em&gt;title&lt;/em&gt;값을 가지고와 &lt;em&gt;src&lt;/em&gt;에 넣어줍니다.&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(".choice4 .off1").on("click", function(e){
+            e.preventDefault();
+            $(".list4 img").attr({"src":""});
+        });
+        $(".choice4 .btn1").on("click", function(e){
+            e.preventDefault();
+            $(".list4 img").attr("src", function(){
+                return "https://tistory1.daumcdn.net/tistory/2933724/skin/images/" + this.title;
+            });
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+
+<script>
+$(".choice4 .off1").on("click", function(e){
+    e.preventDefault();
+    $(".list4 img").attr({"src":""});
+});
+$(".choice4 .btn1").on("click", function(e){
+    e.preventDefault();
+    $(".list4 img").attr("src", function(){
+        return "https://tistory1.daumcdn.net/tistory/2933724/skin/images/" + this.title;
+    });
+});
+</script>
+<!-- //Sample4 -->
+
+
+
+   
+   
+
+<!-- Sample5 -->
+<h4 class="pt50">샘플(Sample)</h4>
+<p>함수를 사용하여 이미지를 순차적으로 크기를 변경하는 예제입니다.</p>
+<div class="sample">
+    <h5>Sample5<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="ex">
+        <!-- ex -->
+        <h3>탐색(Traversing)</h3>
+        <div class="list5">
+            <ul class="listNo">
+                <li><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" alt="150" width="150" /></li>
+                <li><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover02.jpg" alt="150" width="150" /></li>
+                <li><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover03.jpg" alt="150" width="150" /></li>
+                <li><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="150" width="150" /></li>
+                <li><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="150" width="150" /></li>
+            </ul>
+        </div>
+        <!-- ex -->
+    </div>
+    
+    <div class="choice5">
+        <a href="#" class="off1">리셋</a>
+        <a href="#" class="btn1">클릭하면 <em>순차적</em>으로 크게 해줍니다.</a>
+    </div>
+</div>
+<!-- sample -->
+
+
+<div class="sample">
+    <h5>jquery<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="script on">
+        <pre class="line-numbers"><code class="language-javascript">$(".choice5 .btn1").on("click", function(e){
+    e.preventDefault();
+    $(".list5 img").attr("width", function(i){
+        return (i + 1) * 50;
+    });
+});</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html">
+        <pre class="line-numbers"><code class="language-markup">&lt;h3&gt;탐색(Traversing)&lt;/h3&gt;
+&lt;div class="list5"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" alt="150" width="150" /&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover02.jpg" alt="150" width="150" /&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover03.jpg" alt="150" width="150" /&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="150" width="150" /&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="150" width="150" /&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>Total<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html on">
+        <pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery Sample&lt;/title&gt;
+    &lt;style&gt;
+        li {list-style: none; display: inline}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+   
+    &lt;h3&gt;탐색(Traversing)&lt;/h3&gt;
+    &lt;div class="list5"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" alt="150" width="150" /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover02.jpg" alt="150" width="150" /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover03.jpg" alt="150" width="150" /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="150" width="150" /&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="150" width="150" /&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="choice5"&gt;
+        &lt;a href="#" class="off1"&gt;리셋&lt;/a&gt;
+        &lt;a href="#" class="btn1"&gt;클릭하면 순차적으로 크게 해줍니다.&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(".choice5 .off1").on("click", function(e){
+            e.preventDefault();
+            $(".list5 img").attr({"width":"150"});
+        });
+        $(".choice5 .btn1").on("click", function(e){
+            e.preventDefault();
+            $(".list5 img").attr("width", function(i){
+                return (i + 1) * 50;
+            });
+        });
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+
+<script>
+$(".choice5 .off1").on("click", function(e){
+    e.preventDefault();
+    $(".list5 img").attr({"width":"150"});
+});
+$(".choice5 .btn1").on("click", function(e){
+    e.preventDefault();
+    $(".list5 img").attr("width", function(i){
+        return (i + 1) * 50;
+    });
+});
+</script>
+<!-- //Sample5 -->
+    
+    
+
+   
+   
+<style>
+    #tab-menu {width: 350px; margin:50px auto;}
+    .tab-btn {margin-bottom: 1px;  }
+    .tab-btn ul {overflow: hidden; padding-left: 0 !important; margin-bottom:0 !important}
+    .tab-btn li {float: left; width: 20%; text-align: center; list-style:none !important;}
+    .tab-btn li a {padding: 14px 10px 10px 10px ; display: block; background-color: #1e88e5; margin-right: 1px; color:#fff; border-radius:3px;}    
+</style>
+
+
+<!-- Sample6 -->
+<h4 class="pt50">샘플(Sample)</h4>
+<p>attr을 이용하여 간단한 탭 메뉴를 만드는 예제입니다.</p>
+<div class="sample">
+    <h5>Sample6<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="ex">
+        <!-- ex -->
+        <h3>탐색(Traversing)</h3>
+        <div id="tab-menu">
+            <div class="tab-btn">
+                <ul>
+                    <li><a href="#">Tab1</a></li>
+                    <li><a href="#">Tab2</a></li>
+                    <li><a href="#">Tab3</a></li>
+                    <li><a href="#">Tab4</a></li>
+                    <li><a href="#">Tab5</a></li>
+                </ul>
+            </div>
+            <div class="tab-cont">
+                <img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" width="350" alt="이미지1">
+            </div>
+        </div>
+        <!-- ex -->
+    </div>
+</div>
+<!-- sample -->
+
+
+<div class="sample">
+    <h5>jquery<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="script on">
+        <pre class="line-numbers"><code class="language-javascript">$(".tab-btn ul li").click(function(){
+    var target = $(this);
+    var index = target.index()+1;
+    //alert(index);
+    target.find("a").text("Menu"+index);
+    $(".tab-cont img").attr({"src":"https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover0"+index+".jpg","alt":"이미지"+index });
+});</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html">
+        <pre class="line-numbers"><code class="language-markup">&lt;h3&gt;탐색(Traversing)&lt;/h3&gt;
+&lt;div id="tab-menu"&gt;
+    &lt;div class="tab-btn"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Tab1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Tab2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Tab3&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Tab4&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Tab5&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div class="tab-cont"&gt;
+        &lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" width="350" alt="이미지1"&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>css<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html">
+<pre class="line-numbers"><code class="language-css">#tab-menu {width: 350px; margin:50px auto;}
+.tab-btn {margin-bottom: 1px;  }
+.tab-btn ul {overflow: hidden;}
+.tab-btn li {float: left; width: 20%; text-align: center;}
+.tab-btn li a {padding: 14px 10px 10px 10px ; display: block; background-color: #1e88e5; margin-right: 1px; color:#fff;}</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>Total<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html on">
+        <pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery Sample&lt;/title&gt;
+    &lt;style&gt;
+        * {padding: 0; margin:0;}
+		li {list-style: none;}
+		a {text-decoration: none; color: #666;}
+		#tab-menu {width: 350px; margin:50px auto;}
+		.tab-btn {margin-bottom: 1px;  }
+		.tab-btn ul {overflow: hidden;}
+		.tab-btn li {float: left; width: 20%; text-align: center;}
+		.tab-btn li a {padding: 14px 10px 10px 10px ; display: block; background-color: #1e88e5; margin-right: 1px; color:#fff;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+    &lt;h3&gt;탐색(Traversing)&lt;/h3&gt;
+    &lt;div id="tab-menu"&gt;
+		&lt;div class="tab-btn"&gt;
+			&lt;ul&gt;
+				&lt;li&gt;&lt;a href="#"&gt;Tab1&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;Tab2&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;Tab3&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;Tab4&lt;/a&gt;&lt;/li&gt;
+				&lt;li&gt;&lt;a href="#"&gt;Tab5&lt;/a&gt;&lt;/li&gt;
+			&lt;/ul&gt;
+		&lt;/div&gt;
+		&lt;div class="tab-cont"&gt;
+			&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" width="350" alt="이미지1"&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+    
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+		//글씨를 클릭하면 tab --&gt; menu로 변경해주세요.
+		// $(".tab-btn ul li").click(function(){
+		// 	$(".tab-btn ul li a").text("Menu");
+		// });
+		
+		//글씨를 클릭하면 tab3 --&gt; menu3로 변경해주세요.
+		// $(".tab-btn ul li").click(function(){
+		// 	var target = $(this);
+		// 	var index = target.index()+1;
+		// 	//alert(index);
+		// 	target.find("a").text("Menu"+index);
+		// });
+		
+		//해당 버튼을 클릭하면 해당 이미지 나오게 하기
+		// var attr = $(".tab-cont img").attr("src");
+		// //alert(attr);
+		// $(".tab-btn ul li:eq(0)").click(function(){
+		// 	$(".tab-cont img").attr({ "src":"https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" , "alt":"이미지1" });
+		// });
+		// $(".tab-btn ul li:eq(1)").click(function(){
+		// 	$(".tab-cont img").attr({ "src":"https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover02.jpg" , "alt":"이미지2" });
+		// });
+		// $(".tab-btn ul li:eq(2)").click(function(){
+		// 	$(".tab-cont img").attr({ "src":"https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover03.jpg" , "alt":"이미지3" });
+		// });
+		// $(".tab-btn ul li:eq(3)").click(function(){
+		// 	$(".tab-cont img").attr({ "src":"https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" , "alt":"이미지5" });
+		// });
+		// $(".tab-btn ul li:eq(4)").click(function(){
+		// 	$(".tab-cont img").attr({ "src":"https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" , "alt":"이미지6" });
+		// });
+		
+		//한번에 쓰기
+		$(".tab-btn ul li").click(function(){
+			var target = $(this);
+			var index = target.index()+1;
+			//alert(index);
+			target.find("a").text("Menu"+index);
+			$(".tab-cont img").attr({"src":"https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover0"+index+".jpg","alt":"이미지"+index });
+		});
+	&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+
+<script>
+$(".tab-btn ul li").click(function(e){
+    e.preventDefault();
+    var target = $(this);
+    var index = target.index()+1;
+    //alert(index);
+    target.find("a").text("Menu"+index);
+    $(".tab-cont img").attr({"src":"https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover0"+index+".jpg","alt":"이미지"+index });
+});
+</script>
+<!-- //Sample6 -->
+    
+    
+    
     
 </body>
 </html>

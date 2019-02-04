@@ -1,0 +1,42 @@
+&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery Sample&lt;/title&gt;
+    &lt;style&gt;
+        .circle {width: 100px; height: 100px; color: #c7254e; background-color: #f9f2f4; border-radius: 50%; border: 1px dashed #a51a3d; text-align: center; line-height: 100px;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+    &lt;h3&gt;속성(ATTRIBUTES)&lt;/h3&gt;
+    &lt;div class="list2"&gt;
+        &lt;div class="circle"&gt;circle&lt;/div&gt;
+        &lt;p class="desc"&gt;
+            &lt;span&gt;offset().left = &lt;/span&gt;&lt;span class="ol"&gt;0&lt;/span&gt;&lt;br&gt;
+			&lt;span&gt;offset().top = &lt;/span&gt;&lt;span class="ot"&gt;0&lt;/span&gt;&lt;br&gt;
+            &lt;span&gt;position().left = &lt;/span&gt;&lt;span class="pl"&gt;0&lt;/span&gt;&lt;br&gt;
+            &lt;span&gt;position().top = &lt;/span&gt;&lt;span class="pt"&gt;0&lt;/span&gt;&lt;br&gt;
+        &lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="choice2"&gt;
+        &lt;a href="#c"&gt;원을 드래그 하면 원의 좌표값을 표현합니다.&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $('.list2 .circle').draggable({
+            drag:function(){
+                $('.desc .ol').text( $('.circle').offset().left + "px");
+                $('.desc .ot').text( $('.circle').offset().top + "px");
+                $('.desc .pl').text( $('.circle').position().left + "px");
+                $('.desc .pt').text( $('.circle').position().top + "px");
+            }
+        });
+    &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;

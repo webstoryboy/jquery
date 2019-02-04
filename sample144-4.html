@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Sample</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        li {list-style: none;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+        .img_random li {display: inline-block;}
+    </style>
+</head>
+<body>
+    
+    <h3>2초에 한번씩 이미지 이동하기</h3>
+    <div class="list4">
+        <img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="" width="150">
+        <img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="" width="150">
+        <img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover06.jpg" alt="" width="150">
+    </div>
+    
+    <div class="choice4">
+        <a href="#" class="off1">리셋</a>
+        <a href="#" class="btn1">클릭하면 이미지를 2초에 한번씩 이동합니다.</a>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>	
+        var timer;
+        $(".choice4 .off1").click(function(){
+            clearInterval(timer);
+        });
+        $(".choice4 .btn1").click(function(){
+            timer = setInterval(function(){
+                $(".list4 img").last().prependTo(".list4");
+            },2000);
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

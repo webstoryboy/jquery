@@ -14,19 +14,183 @@
 <hr>
 
 <h3>.scrollTop()</h3>
+<p class="blue">선택한 요소의 세로 스크롤 값을 설정하거나 반환합니다.</p>
 
-<h5>정의</h5> 
+
+<h4 class="pt50">문법(Syntax)</h4>
+<p class="blue">
+$("선택자").scrollTop();<br>
+$("선택자").scrollTop("속성값");<br>
+</p>
+
+<h4 class="pt50">정의(Definition)</h4> 
 <ul>
     <li>.scrollTop() 메서드는 선택한 요소에 세로 스크롤 값을 가져옵니다.</li>
     <li>.scrollTop("속성값") 메서드는 선택한 요소에 세로 스크롤 값을 변경합니다.</li>
 </ul>
 
 
-<h5>문법</h5>
-<p class="blue">
-$("선택자").scrollTop();<br>
-$("선택자").scrollTop("속성값");<br>
-</p>
+
+<!-- Sample1 -->
+<h4 class="pt50">샘플(Sample)</h4>
+<p>.scrollLeft() : Div 박스의 스크롤 값과 브라우저의 스크롤 값을 구하는 예제입니다.</p>
+<div class="sample">
+    <h5>Sample1<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="ex">
+        <!-- ex -->
+        <h3>속성(ATTRIBUTES)</h3>
+        <div class="list1">
+            <div class="square">square</div>
+            <p class="desc">
+                <span>"square" scrollLeft() = </span><span class="sl">0</span><br>
+                <span>"square" scrollTop() = </span><span class="st">0</span><br>
+                <span>"브라우저" scrollLeft() = </span><span class="bl">0</span><br>
+                <span>"브라우저" scrollTop() = </span><span class="bt">0</span><br>
+            </p>
+        </div>
+        <!-- ex -->
+    </div>
+    
+    <div class="choice1">
+        <a href="#" class="off1">리셋</a><br>
+        <a href="#" class="btn1">클릭하면 원의 square의 <em>scrollLeft()</em> 좌표값을 표현합니다.</a>
+        <a href="#" class="btn2">클릭하면 원의 square의 <em>scrollTop()</em> 좌표값을 표현합니다.</a><br>
+        <a href="#" class="btn3">클릭하면 원의 브라우저의 <em>scrollLeft()</em> 좌표값을 표현합니다.</a>
+        <a href="#" class="btn4">클릭하면 원의 브라우저의 <em>scrollTop()</em> 좌표값을 표현합니다.</a>
+    </div>
+</div>
+<!-- sample -->
+
+
+<div class="sample">
+    <h5>jquery<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="script on">
+        <pre class="line-numbers"><code class="language-javascript">$(".choice1 .btn1").click(function(e){
+    e.preventDefault();
+    $(".list1 .desc .sl").text( $(".list1 .square").scrollLeft() + "px" );
+});
+$(".choice1 .btn2").click(function(e){
+    e.preventDefault();
+    $(".list1 .desc .st").text( $(".list1 .square").scrollTop() + "px" );
+});
+$(".choice1 .btn3").click(function(e){
+    e.preventDefault();
+    $(".list1 .desc .bl").text( $(window).scrollLeft() + "px" );
+});
+$(".choice1 .btn4").click(function(e){
+    e.preventDefault();
+    $(".list1 .desc .bt").text( $(window).scrollTop() + "px" );
+});</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html">
+        <pre class="line-numbers"><code class="language-markup">&lt;h3&gt;속성(ATTRIBUTES)&lt;/h3&gt;
+&lt;div class="list1"&gt;
+    &lt;div class="square"&gt;square&lt;/div&gt;
+    &lt;p class="desc"&gt;
+        &lt;span&gt;scrollLeft() = &lt;/span&gt;&lt;span class="sl"&gt;0&lt;/span&gt;&lt;br&gt;
+        &lt;span&gt;scrollTop() = &lt;/span&gt;&lt;span class="st"&gt;0&lt;/span&gt;&lt;br&gt;
+        &lt;span&gt;scrollLeft() = &lt;/span&gt;&lt;span class="bl"&gt;0&lt;/span&gt;&lt;br&gt;
+        &lt;span&gt;scrollTop() = &lt;/span&gt;&lt;span class="bt"&gt;0&lt;/span&gt;&lt;br&gt;
+    &lt;/p&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>Total<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html on">
+        <pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ko"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery Sample&lt;/title&gt;
+    &lt;style&gt;
+        .square {width: 100%; height: 300px; line-height: 300px; text-align: center; color: #c7254e; background-color: #f9f2f4; border-radius: 3px; border: 1px dashed #a51a3d;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+    &lt;h3&gt;속성(ATTRIBUTES)&lt;/h3&gt;
+    &lt;div class="list1"&gt;
+        &lt;div class="square"&gt;square&lt;/div&gt;
+        &lt;p class="desc"&gt;
+            &lt;span&gt;scrollLeft() = &lt;/span&gt;&lt;span class="sl"&gt;0&lt;/span&gt;&lt;br&gt;
+            &lt;span&gt;scrollTop() = &lt;/span&gt;&lt;span class="st"&gt;0&lt;/span&gt;&lt;br&gt;
+            &lt;span&gt;scrollLeft() = &lt;/span&gt;&lt;span class="bl"&gt;0&lt;/span&gt;&lt;br&gt;
+            &lt;span&gt;scrollTop() = &lt;/span&gt;&lt;span class="bt"&gt;0&lt;/span&gt;&lt;br&gt;
+        &lt;/p&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="choice1"&gt;
+        &lt;a href="#" class="off1"&gt;리셋&lt;/a&gt;&lt;br&gt;
+        &lt;a href="#" class="btn1"&gt;클릭하면 원의 square의 &lt;em&gt;scrollLeft()&lt;/em&gt; 좌표값을 표현합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn2"&gt;클릭하면 원의 square의 &lt;em&gt;scrollTop()&lt;/em&gt; 좌표값을 표현합니다.&lt;/a&gt;&lt;br&gt;
+        &lt;a href="#" class="btn3"&gt;클릭하면 원의 브라우저의 &lt;em&gt;scrollLeft()&lt;/em&gt; 좌표값을 표현합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn4"&gt;클릭하면 원의 브라우저의 &lt;em&gt;scrollTop()&lt;/em&gt; 좌표값을 표현합니다.&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(".choice1 .off1").click(function(e){
+            e.preventDefault();
+            $(".sl,.st,.bl,.bt").text("0");
+        });
+        $(".choice1 .btn1").click(function(e){
+            e.preventDefault();
+            $(".list1 .desc .sl").text( $(".list1 .square").scrollLeft() + "px" );
+        });
+        $(".choice1 .btn2").click(function(e){
+            e.preventDefault();
+            $(".list1 .desc .st").text( $(".list1 .square").scrollTop() + "px" );
+        });
+        $(".choice1 .btn3").click(function(e){
+            e.preventDefault();
+            $(".list1 .desc .bl").text( $(window).scrollLeft() + "px" );
+        });
+        $(".choice1 .btn4").click(function(e){
+            e.preventDefault();
+            $(".list1 .desc .bt").text( $(window).scrollTop() + "px" );
+        });
+    &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+
+<script>
+    $(".choice1 .off1").click(function(e){
+        e.preventDefault();
+        $(".sl,.st,.bl,.bt").text("0");
+    });
+    $(".choice1 .btn1").click(function(e){
+        e.preventDefault();
+        $(".list1 .desc .sl").text( $(".list1 .square").scrollLeft() + "px" );
+    });
+    $(".choice1 .btn2").click(function(e){
+        e.preventDefault();
+        $(".list1 .desc .st").text( $(".list1 .square").scrollTop() + "px" );
+    });
+    $(".choice1 .btn3").click(function(e){
+        e.preventDefault();
+        $(".list1 .desc .bl").text( $(window).scrollLeft() + "px" );
+    });
+    $(".choice1 .btn4").click(function(e){
+        e.preventDefault();
+        $(".list1 .desc .bt").text( $(window).scrollTop() + "px" );
+    });
+</script>
+<!-- //Sample1 -->
+
 
 
 

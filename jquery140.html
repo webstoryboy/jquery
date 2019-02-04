@@ -14,15 +14,147 @@
 <hr>
 
 <h3>.clone()</h3>
+<p class="blue">선택한 요소 본사본을 만듭니다.</p>
 
-<h5>정의</h5> 
-<p>.clone() 메서드는 선택한 요소를 복사합니다.</p>
-
-
-<h5>문법</h5>
+<h4 class="pt50">문법(Syntax)</h4>
 <p class="blue">
 $("선택자").clone();<br>
 </p>
+
+<h4 class="pt50">정의(Definition)</h4>
+<ul>
+    <li>.clone() 메서드는 선택한 요소를 복사합니다.</li>
+</ul>
+
+
+
+
+<!-- Sample1 -->
+<h4 class="pt50">샘플(Sample)</h4>
+<p>.clone() : 선택한 요소를 복사하여 원하는 위치에 넣는 예제입니다. .appendTo와 .prependTo를 사용한 예제입니다.</p>
+<div class="sample">
+    <h5>Sample1<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="ex">
+        <!-- ex -->
+        <h3>속성(Attributes)</h3>
+        <div class="list1">
+            <ul>
+                <li class="select1">.children() 메서드는 선택한 요소의 모든 자식을 선택합니다.</li>
+                <li>.closest() 메서드는 선택한 요소의 상위 요소 중 가장 가까운 요소를 선택합니다.</li>
+                <li>.find() 메서드는 선택한 요소에서 조건에 맞는 요소를 다시 선택합니다.</li>
+                <li>.next() 메서드는 선택한 요소의 다음 요소를 선택합니다.</li>
+                <li>.nextAll() 메서드는 선택한 요소의 다음 요소를 선택합니다.</li>
+                <li class="select2">.nextUntil() 메서드는 지정한 선택 요소의 모든 요소를 선택합니다.</li>
+            </ul>
+        </div>
+        <!-- ex -->
+    </div>
+    
+    <div class="choice1">
+        <a href="#" class="btn1"><em>select1</em> 복사하여 마지막 위치에 채웁니다.</a>
+        <a href="#" class="btn2"><em>select2</em> 복사하여 처음 위치에 채웁니다.</a>
+    </div>
+</div>
+<!-- sample -->
+
+
+<div class="sample">
+    <h5>jquery<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="script on">
+        <pre class="line-numbers"><code class="language-javascript">$(".choice1 .btn1").on("click", function(e){
+    e.preventDefault();
+    $(".list1 .select1").clone().appendTo(".list1 ul");
+});
+$(".choice1 .btn2").on("click", function(e){
+    e.preventDefault();
+    $(".list1 .select2").clone().prependTo(".list1 ul");
+});</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html ">
+        <pre class="line-numbers"><code class="language-markup">&lt;h3&gt;속성(Attributes)&lt;/h3&gt;
+&lt;div class="list1"&gt;
+    &lt;ul&gt;
+        &lt;li class="select1"&gt;.children() 메서드는 선택한 요소의 모든 자식을 선택합니다.&lt;/li&gt;
+        &lt;li&gt;.closest() 메서드는 선택한 요소의 상위 요소 중 가장 가까운 요소를 선택합니다.&lt;/li&gt;
+        &lt;li&gt;.find() 메서드는 선택한 요소에서 조건에 맞는 요소를 다시 선택합니다.&lt;/li&gt;
+        &lt;li&gt;.next() 메서드는 선택한 요소의 다음 요소를 선택합니다.&lt;/li&gt;
+        &lt;li&gt;.nextAll() 메서드는 선택한 요소의 다음 요소를 선택합니다.&lt;/li&gt;
+        &lt;li class="select2"&gt;.nextUntil() 메서드는 지정한 선택 요소의 모든 요소를 선택합니다.&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>Total<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html on">
+        <pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery Sample&lt;/title&gt;
+    &lt;style&gt;
+        li.select:before {content:'Select'; padding: 4px 4px 2px 4px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color: #e7f6fd; border-radius: 4px;border: 1px dashed #3d90b7;}
+        .rLine {padding: 4px 4px 2px 10px; font-size: 90%; color: #c7254e; white-space: nowrap; background-color: #f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+    &lt;h3&gt;속성(Attributes)&lt;/h3&gt;
+    &lt;div class="list1"&gt;
+        &lt;ul&gt;
+            &lt;li class="select1"&gt;.children() 메서드는 선택한 요소의 모든 자식을 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.closest() 메서드는 선택한 요소의 상위 요소 중 가장 가까운 요소를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.find() 메서드는 선택한 요소에서 조건에 맞는 요소를 다시 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.next() 메서드는 선택한 요소의 다음 요소를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.nextAll() 메서드는 선택한 요소의 다음 요소를 선택합니다.&lt;/li&gt;
+            &lt;li class="select2"&gt;.nextUntil() 메서드는 지정한 선택 요소의 모든 요소를 선택합니다.&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="choice1"&gt;
+        &lt;a href="#" class="btn1"&gt;&lt;em&gt;select1&lt;/em&gt; 복사하여 마지막 위치에 채웁니다.&lt;/a&gt;
+        &lt;a href="#" class="btn2"&gt;&lt;em&gt;select2&lt;/em&gt; 복사하여 처음 위치에 채웁니다.&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(".choice1 .btn1").on("click", function(e){
+            e.preventDefault();
+            $(".list1 .select1").clone().appendTo(".list1 ul");
+        });
+        $(".choice1 .btn2").on("click", function(e){
+            e.preventDefault();
+            $(".list1 .select2").clone().prependTo(".list1 ul");
+        });
+    &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+
+<script>
+    $(".choice1 .btn1").on("click", function(e){
+        e.preventDefault();
+        $(".list1 .select1").clone().appendTo(".list1 ul");
+    });
+    $(".choice1 .btn2").on("click", function(e){
+        e.preventDefault();
+        $(".list1 .select2").clone().prependTo(".list1 ul");
+    });
+</script>
+<!-- //Sample1 -->
+
 
 
 

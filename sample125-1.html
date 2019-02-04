@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Sample</title>
+    <style>
+        .circle {width: 100px; height: 100px; color: #c7254e; background-color: #f9f2f4; border-radius: 50%; border: 1px dashed #a51a3d; text-align: center; line-height: 100px;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+    </style>
+</head>
+<body>
+    
+    <h3>속성(ATTRIBUTES)</h3>
+    <div class="list1">
+        <div class="circle">circle</div>
+        <p class="desc"></p>
+    </div>
+    
+    <div class="choice1">
+        <a href="#" class="off1">리셋</a>
+        <a href="#" class="btn1">클릭하면 원의 <em>left</em> 좌표값을 표현합니다.</a>
+        <a href="#" class="btn2">클릭하면 원의 <em>top</em> 좌표값을 표현합니다.</a>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(".choice1 .off1").click(function(e)
+            e.preventDefault();
+            $(".list1 .desc").text("");
+        });
+        $(".choice1 .btn1").click(function(e){
+            e.preventDefault();
+            $(".list1 .desc").text( "left : " + $(".list1 .circle").offset().left );
+        });
+        $(".choice1 .btn2").click(function(e){
+            e.preventDefault();
+            $(".list1 .desc").text( "top : " + $(".list1 .circle").offset().top );
+        });
+    </script>
+
+</body>
+</html>

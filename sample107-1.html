@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Sample</title>
+    <style>
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+</style>
+</head>
+<body>
+   
+    <h3>속성(Attributes)</h3>
+    <div class="list1">
+        <input id="check1" type="checkbox" checked="checked">
+        <label for="check1">체크</label>
+        <p class="desc"></p>
+    </div>
+    
+    <div class="choice1">
+        <a href="#" class="off1">리셋</a>
+        <a href="#" class="btn1">클릭하면 <em>.attr</em>의 속성 값을 가져옵니다.</a>
+        <a href="#" class="btn2">클릭하면 <em>.prop</em>의 속성 값을 가져옵니다.</a>
+        <a href="#" class="btn3">클릭하면 <em>.is</em>의 속성 값을 가져옵니다.</a>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(".choice1 .off1").on("click", function(e){
+            e.preventDefault();
+            $(".list1 p").text("");
+        });
+        $(".choice1 .btn1").on("click", function(e){
+            e.preventDefault();
+            $( ".list1 input" ).change(function() {
+              var $input = $( this );
+              $(".list1 .desc").html( ".attr( \"checked\" ) : " + $input.attr("checked"))
+            }).change();
+        });
+        $(".choice1 .btn2").on("click", function(e){
+            e.preventDefault();
+            $( ".list1 input" ).change(function() {
+              var $input = $( this );
+              $(".list1 .desc").html( ".prop( \"checked\" ) : " + $input.prop("checked"))
+            }).change();
+        });
+        $(".choice1 .btn3").on("click", function(e){
+            e.preventDefault();
+            $( ".list1 input" ).change(function() {
+              var $input = $( this );
+              $(".list1 .desc").html( ".is( \"checked\" ) : " + $input.is(":checked"))
+            }).change();
+        });   
+</script>
+</body>
+</html>

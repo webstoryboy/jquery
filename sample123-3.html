@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Sample</title>
+    <style>
+        .select:before {padding: 4px 6px 2px 6px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color: #e7f6fd; border-radius: 4px;border: 1px dashed #3d90b7;}
+        .rLine {padding: 4px 4px 2px 10px; font-size: 90%; color: #c7254e; white-space: nowrap; background-color: #f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+        .list3.img {padding: 10px 0;}
+        .list3.img img {width: 100px;}
+    </style>
+</head>
+<body>
+    
+    <h3>Dimensions</h3>
+    <div class="list3 img">
+        <img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/watch01.jpg" alt="">
+        <img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/watch02.jpg" alt="">
+        <img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/watch03.jpg" alt="">
+        <img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/watch04.jpg" alt="">
+        <img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/watch05.jpg" alt="">
+        <img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/watch06.jpg" alt="">
+    </div>
+    
+    <div class="choice3">
+        <a href="#" class="off1">리셋</a>
+        <a href="#" class="btn1">클릭하면 사진의 크기를 순차적으로 합니다.</a>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(".choice3 .off1").on("click", function(e){
+            e.preventDefault();
+            $(".list3 img").height("").width("");
+        });
+        
+        $(".choice3 .btn1").on("click", function(e){
+            e.preventDefault();
+            $(".list3 img").height(function(index){
+                return (index + 1) * 30;
+            });
+            $(".list3 img").width(function(index){
+                return (index + 1) * 30;
+            });
+        });
+    </script>
+
+</body>
+</html>

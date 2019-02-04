@@ -14,22 +14,580 @@
 <hr>
 
 <h3>.append()</h3>
+<p class="blue">선택한 요소 마지막 위치에 새로운 요소를 추가합니다.</p>
 
-<h5>정의</h5> 
+<h4 class="pt50">문법(Syntax)</h4>
+<p class="blue">
+$("선택자").append("텍스트");<br>
+$("선택자").append("선택자");<br>
+$("선택자").append("함수");<br>
+</p>
+
+<h4 class="pt50">정의(Definition)</h4>
 <ul>
     <li>.append("텍스트") 메서드는 선택한 마지막 요소에 새로운 텍스트 추가합니다.</li>
-    <li>.append("태그") 메서드는 선택한 마지막 요소에 새로운 태그를 추가합니다.</li>
     <li>.append("선택자") 메서드는 선택한 마지막 요소에 새로운 선택자를 추가합니다.</li>
     <li>.append("함수") 메서드는 선택한 마지막 요소에 함수를 설정합니다.</li>
 </ul>
 
-<h5>문법</h5>
-<p class="blue">
-$("선택자").append("텍스트");<br>
-$("선택자").append("태그");<br>
-$("선택자").append("선택자");<br>
-$("선택자").append("함수");<br>
-</p>
+
+
+
+<!-- Sample1 -->
+<h4 class="pt50">샘플(Sample)</h4>
+<p>.append() : 선택한 요소를 마지막 요소에 추가하는 예제입니다.</p>
+<div class="sample">
+    <h5>Sample1<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="ex">
+        <!-- ex -->
+        <h3>속성(Attributes)</h3>
+        <div class="list1">
+            <ul>
+                <li>.closest() 메서드는 선택한 요소의 상위 요소 중 가장 가까운 요소를 선택합니다.</li>
+                <li>.find() 메서드는 선택한 요소에서 조건에 맞는 요소를 다시 선택합니다.</li>
+                <li>.next() 메서드는 선택한 요소의 다음 요소를 선택합니다.</li>
+                <li>.nextAll() 메서드는 선택한 요소의 다음 요소를 선택합니다.</li>
+            </ul>
+        </div>
+        <!-- ex -->
+    </div>
+    
+    <div class="choice1">
+        <a href="#" class="btn1">마지막 요소(<em>.append</em>)에 컨텐츠를 추가합니다.</a>
+        <a href="#" class="btn2">처음 요소(<em>.prepend</em>)에 컨텐츠를 추가합니다.</a>
+    </div>
+</div>
+<!-- sample -->
+
+
+<div class="sample">
+    <h5>jquery<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="script on">
+        <pre class="line-numbers"><code class="language-javascript">$(".choice1 .btn1").on("click", function(e){
+    e.preventDefault();
+    $(".list1 ul").append("&lt;li&gt;.nextUntil() 메서드는 지정한 선택 요소의 모든 요소를 선택합니다.&lt;/li&gt;");
+});
+$(".choice1 .btn2").on("click", function(e){
+    e.preventDefault();
+    $(".list1 ul").prepend("&lt;li&gt;.children() 메서드는 선택한 요소의 모든 자식을 선택합니다.&lt;/li&gt;");
+});</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html ">
+        <pre class="line-numbers"><code class="language-markup">&lt;h3&gt;속성(Attributes)&lt;/h3&gt;
+&lt;div class="list1"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;.closest() 메서드는 선택한 요소의 상위 요소 중 가장 가까운 요소를 선택합니다.&lt;/li&gt;
+        &lt;li&gt;.find() 메서드는 선택한 요소에서 조건에 맞는 요소를 다시 선택합니다.&lt;/li&gt;
+        &lt;li&gt;.next() 메서드는 선택한 요소의 다음 요소를 선택합니다.&lt;/li&gt;
+        &lt;li&gt;.nextAll() 메서드는 선택한 요소의 다음 요소를 선택합니다.&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>Total<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html on">
+        <pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery Sample&lt;/title&gt;
+    &lt;style&gt;
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+    &lt;h3&gt;속성(Attributes)&lt;/h3&gt;
+    &lt;div class="list1"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;.closest() 메서드는 선택한 요소의 상위 요소 중 가장 가까운 요소를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.find() 메서드는 선택한 요소에서 조건에 맞는 요소를 다시 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.next() 메서드는 선택한 요소의 다음 요소를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.nextAll() 메서드는 선택한 요소의 다음 요소를 선택합니다.&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="choice1"&gt;
+        &lt;a href="#" class="btn1"&gt;마지막 요소에 컨텐츠를 추가합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn2"&gt;처음 요소에 컨텐츠를 추가합니다.&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(".choice1 .btn1").on("click", function(e){
+            e.preventDefault();
+            $(".list1 ul").append("&lt;li&gt;.nextUntil() 메서드는 지정한 선택 요소의 모든 요소를 선택합니다.&lt;/li&gt;");
+        });
+        $(".choice1 .btn2").on("click", function(e){
+            e.preventDefault();
+            $(".list1 ul").prepend("&lt;li&gt;.children() 메서드는 선택한 요소의 모든 자식을 선택합니다.&lt;/li&gt;");
+        });
+    &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+
+<script>
+    $(".choice1 .btn1").on("click", function(e){
+        e.preventDefault();
+        $(".list1 ul").append("<li>.nextUntil() 메서드는 지정한 선택 요소의 모든 요소를 선택합니다.</li>");
+    });
+    $(".choice1 .btn2").on("click", function(e){
+        e.preventDefault();
+        $(".list1 ul").prepend("<li>.children() 메서드는 선택한 요소의 모든 자식을 선택합니다.</li>");
+    });
+</script>
+<!-- //Sample1 -->
+
+
+
+
+
+
+<!-- Sample2 -->
+<h4 class="pt50">샘플(Sample)</h4>
+<p>.append() : 선택한 요소를 마지막 요소에 추가하는 예제입니다.</p>
+<div class="sample">
+    <h5>Sample2<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="ex">
+        <!-- ex -->
+        <h3 class="h3">속성(Attributes)</h3>
+        <div class="list2">
+            <ul>
+                <li>.closest() 메서드는 선택한 요소의 상위 요소 중 가장 가까운 요소를 선택합니다.</li>
+                <li>.find() 메서드는 선택한 요소에서 조건에 맞는 요소를 다시 선택합니다.</li>
+                <li>.next() 메서드는 선택한 요소의 다음 요소를 선택합니다.</li>
+                <li>.nextAll() 메서드는 선택한 요소의 다음 요소를 선택합니다.</li>
+            </ul>
+        </div>
+        <!-- ex -->
+    </div>
+    
+    <div class="choice2">
+        <a href="#" class="btn1"><em>h3 요소</em>를 마지막 요소(<em>append</em>)에 추가합니다.</a>
+        <a href="#" class="btn2"><em>h3 요소</em>를 처음 요소(<em>prepend</em>)에 추가합니다.</a>
+    </div>
+</div>
+<!-- sample -->
+
+
+<div class="sample">
+    <h5>jquery<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="script on">
+        <pre class="line-numbers"><code class="language-javascript"> $(".choice2 .btn1").on("click", function(e){
+    e.preventDefault();
+    $(".list2 ul").append( $("h3") );
+});
+$(".choice2 .btn2").on("click", function(e){
+    e.preventDefault();
+    $(".list2 ul").prepend( $("h3") );
+});</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html ">
+        <pre class="line-numbers"><code class="language-markup">&lt;h3&gt;속성(Attributes)&lt;/h3&gt;
+&lt;div class="list1"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;.closest() 메서드는 선택한 요소의 상위 요소 중 가장 가까운 요소를 선택합니다.&lt;/li&gt;
+        &lt;li&gt;.find() 메서드는 선택한 요소에서 조건에 맞는 요소를 다시 선택합니다.&lt;/li&gt;
+        &lt;li&gt;.next() 메서드는 선택한 요소의 다음 요소를 선택합니다.&lt;/li&gt;
+        &lt;li&gt;.nextAll() 메서드는 선택한 요소의 다음 요소를 선택합니다.&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>Total<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html on">
+        <pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery Sample&lt;/title&gt;
+    &lt;style&gt;
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+    &lt;h3&gt;속성(Attributes)&lt;/h3&gt;
+    &lt;div class="list2"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;.closest() 메서드는 선택한 요소의 상위 요소 중 가장 가까운 요소를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.find() 메서드는 선택한 요소에서 조건에 맞는 요소를 다시 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.next() 메서드는 선택한 요소의 다음 요소를 선택합니다.&lt;/li&gt;
+            &lt;li&gt;.nextAll() 메서드는 선택한 요소의 다음 요소를 선택합니다.&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="choice2"&gt;
+        &lt;a href="#" class="btn1"&gt;&lt;em&gt;h3 요소&lt;/em&gt;를 마지막 요소에 추가합니다.&lt;/a&gt;
+        &lt;a href="#" class="btn2"&gt;&lt;em&gt;h3 요소&lt;/em&gt;를 처음 요소에 추가합니다.&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(".choice2 .btn1").on("click", function(e){
+            e.preventDefault();
+            $(".list2 ul").append( $("h3") );
+        });
+        $(".choice2 .btn2").on("click", function(e){
+            e.preventDefault();
+            $(".list2 ul").prepend( $("h3") );
+        });
+    &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+
+<script>
+    $(".choice2 .btn1").on("click", function(e){
+        e.preventDefault();
+        $(".list2 ul").append( $(".h3") );
+    });
+    $(".choice2 .btn2").on("click", function(e){
+        e.preventDefault();
+        $(".list2 ul").prepend( $(".h3") );
+    });
+</script>
+<!-- //Sample2 -->
+
+
+
+
+   
+   
+   
+
+
+<!-- Sample3 -->
+<h4 class="pt50">응용 샘플(Sample)</h4>
+<p>이미지 랜덤으로 나오게 하는 예제입니다.</p>
+<div class="sample">
+    <h5>Sample3<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="ex">
+        <!-- ex -->
+        <h3>이미지 랜덤으로 나오기</h3>
+        <div class="list3">
+            <ul class="listNo">
+                <li><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" alt="" width="100"></li>
+                <li><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover02.jpg" alt="" width="100"></li>
+                <li><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover03.jpg" alt="" width="100"></li>
+                <li><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="" width="100"></li>
+            </ul>
+        </div>
+        <!-- ex -->
+    </div>
+    
+    <div class="choice3">
+        <a href="#" class="btn1">클릭하면 리스트 뒤쪽에 이미지가 추가됩니다.</a><br>
+        <a href="#" class="btn2">클릭하면 리스트 앞쪽에 이미지가 추가됩니다.</a><br>
+        <a href="#" class="btn3">클릭하면 리스트 뒤쪽에 이미지를 삭제합니다.</a><br>
+        <a href="#" class="btn4">클릭하면 리스트 앞쪽에 이미지를 삭제합니다.</a><br>
+        <a href="#" class="btn5">클릭하면 리스트 뒤쪽에 이미지를 랜덤으로 추가합니다.</a>
+    </div>
+</div>
+<!-- sample -->
+
+
+<div class="sample">
+    <h5>jquery<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="script on">
+        <pre class="line-numbers"><code class="language-javascript">$(".choice3 .btn1").click(function(e){
+    e.preventDefault();
+    $(".list3 ul").append("&lt;li&gt;&lt;img src='https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg' alt='' width='100'&gt;&lt;/li&gt;" );
+});
+$(".choice3 .btn2").click(function(e){
+    e.preventDefault();
+    $(".list3 ul").prepend("&lt;li&gt;&lt;img src='https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg' alt='' width='100'&gt;&lt;/li&gt;" );
+});
+$(".choice3 .btn3").click(function(e){
+    e.preventDefault();
+    $(".list3 ul li:last").remove();
+});
+$(".choice3 .btn4").click(function(e){
+    e.preventDefault();
+    $(".list3 ul li:first").remove();
+});
+
+//이미지가 랜덤으로 나오는 함수
+function random(){
+    var imgNumber = Math.ceil(Math.random()*9);
+    //alert(imgNumber);
+    var imgPath = "&lt;li&gt;&lt;img src='https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover0"+imgNumber+".jpg' alt='' width='100'&gt;&lt;/li&gt;";
+    //alert(imgPath);
+    return imgPath;
+}
+
+$(".choice3 .btn5").click(function(){
+    $(".list3 ul").append(random);
+});</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html ">
+        <pre class="line-numbers"><code class="language-markup"> &lt;h3&gt;이미지 랜덤으로 나오기&lt;/h3&gt;
+&lt;div class="list3"&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" alt="" width="100"&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover02.jpg" alt="" width="100"&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover03.jpg" alt="" width="100"&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="" width="100"&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>Total<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html on">
+        <pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery Sample&lt;/title&gt;
+    &lt;style&gt;
+        * {margin: 0; padding: 0;}
+        li {list-style: none;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+        .img_random li {display: inline-block;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+    &lt;h3&gt;이미지 랜덤으로 나오기&lt;/h3&gt;
+    &lt;div class="list3"&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" alt="" width="100"&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover02.jpg" alt="" width="100"&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover03.jpg" alt="" width="100"&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="" width="100"&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="choice3"&gt;
+        &lt;a href="#" class="btn1"&gt;클릭하면 리스트 뒤쪽에 이미지가 추가됩니다.&lt;/a&gt;&lt;br&gt;
+        &lt;a href="#" class="btn2"&gt;클릭하면 리스트 앞쪽에 이미지가 추가됩니다.&lt;/a&gt;&lt;br&gt;
+        &lt;a href="#" class="btn3"&gt;클릭하면 리스트 뒤쪽에 이미지를 삭제합니다.&lt;/a&gt;&lt;br&gt;
+        &lt;a href="#" class="btn4"&gt;클릭하면 리스트 앞쪽에 이미지를 삭제합니다.&lt;/a&gt;&lt;br&gt;
+        &lt;a href="#" class="btn5"&gt;클릭하면 리스트 뒤쪽에 이미지를 랜덤으로 추가합니다.&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;
+        $(".choice3 .btn1").click(function(e){
+            e.preventDefault();
+            $(".list3 ul").append("&lt;li&gt;&lt;img src='https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg' alt='' width='100'&gt;&lt;/li&gt;" );
+        });
+        $(".choice3 .btn2").click(function(e){
+            e.preventDefault();
+            $(".list3 ul").prepend("&lt;li&gt;&lt;img src='https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg' alt='' width='100'&gt;&lt;/li&gt;" );
+        });
+        $(".choice3 .btn3").click(function(e){
+            e.preventDefault();
+            $(".list3 ul li:last").remove();
+        });
+        $(".choice3 .btn4").click(function(e){
+            e.preventDefault();
+            $(".list3 ul li:first").remove();
+        });
+        
+        //이미지가 랜덤으로 나오는 함수
+		function random(){
+			var imgNumber = Math.ceil(Math.random()*9);
+			//alert(imgNumber);
+			var imgPath = "&lt;li&gt;&lt;img src='https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover0"+imgNumber+".jpg' alt='' width='100'&gt;&lt;/li&gt;";
+			//alert(imgPath);
+			return imgPath;
+		}
+		
+		$(".choice3 .btn5").click(function(){
+			$(".list3 ul").append(random);
+		});
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+
+<script>
+    $(".choice3 .btn1").click(function(e){
+        e.preventDefault();
+        $(".list3 ul").append("<li><img src='https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg' alt='' width='100'></li>" );
+    });
+    $(".choice3 .btn2").click(function(e){
+        e.preventDefault();
+        $(".list3 ul").prepend("<li><img src='https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg' alt='' width='100'></li>" );
+    });
+    $(".choice3 .btn3").click(function(e){
+        e.preventDefault();
+        $(".list3 ul li:last").remove();
+    });
+    $(".choice3 .btn4").click(function(e){
+        e.preventDefault();
+        $(".list3 ul li:first").remove();
+    });
+
+    //이미지가 랜덤으로 나오는 함수
+    function random(){
+        var imgNumber = Math.ceil(Math.random()*9);
+        //alert(imgNumber);
+        var imgPath = "<li><img src='https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover0"+imgNumber+".jpg' alt='' width='100'></li>";
+        //alert(imgPath);
+        return imgPath;
+    }
+
+    $(".choice3 .btn5").click(function(e){
+        e.preventDefault();
+        $(".list3 ul").append(random);
+    });
+</script>
+<!-- //Sample3 -->
+
+
+
+
+
+<!-- Sample4 -->
+<h4 class="pt50">응용 샘플(Sample)</h4>
+<p>2초에 한번씩 이미지가 변하는 예제입니다.</p>
+<div class="sample">
+    <h5>Sample4<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="ex">
+        <!-- ex -->
+        <h3>2초에 한번씩 이미지 이동하기</h3>
+        <div class="list4">
+            <img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="" width="150">
+            <img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="" width="150">
+            <img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover06.jpg" alt="" width="150">
+        </div>
+        <!-- ex -->
+    </div>
+    
+    <div class="choice4">
+        <a href="#" class="off1">리셋</a>
+        <a href="#" class="btn1">클릭하면 이미지를 2초에 한번씩 이동합니다.</a>
+    </div>
+</div>
+<!-- sample -->
+
+
+<div class="sample">
+    <h5>jquery<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="script on">
+        <pre class="line-numbers"><code class="language-javascript">$(".choice4 .btn1").click(function(){
+    setInterval(function(){
+        $(".list4 img").last().prependTo(".list4");
+    },2000);
+});</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html ">
+        <pre class="line-numbers"><code class="language-markup">&lt;h3&gt;2초에 한번씩 이미지 이동하기&lt;/h3&gt;
+&lt;div class="list4"&gt;
+    &lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="" width="150"&gt;
+    &lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="" width="150"&gt;
+    &lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover06.jpg" alt="" width="150"&gt;
+&lt;/div&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+<div class="sample">
+    <h5>Total<span class="dot"><i></i><i></i><i></i></span></h5>
+    <div class="html on">
+        <pre class="line-numbers"><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;jQuery Sample&lt;/title&gt;
+    &lt;style&gt;
+        * {margin: 0; padding: 0;}
+        li {list-style: none;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+        .img_random li {display: inline-block;}
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    
+    &lt;h3&gt;2초에 한번씩 이미지 이동하기&lt;/h3&gt;
+    &lt;div class="list4"&gt;
+        &lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="" width="150"&gt;
+        &lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="" width="150"&gt;
+        &lt;img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover06.jpg" alt="" width="150"&gt;
+    &lt;/div&gt;
+    
+    &lt;div class="choice4"&gt;
+        &lt;a href="#" class="off1"&gt;리셋&lt;/a&gt;
+        &lt;a href="#" class="btn1"&gt;클릭하면 이미지를 2초에 한번씩 이동합니다.&lt;/a&gt;
+    &lt;/div&gt;
+    
+    &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script&gt;	
+        var timer;
+        $(".choice4 .off1").click(function(){
+            clearInterval(timer);
+        });
+        $(".choice4 .btn1").click(function(){
+            timer = setInterval(function(){
+                $(".list4 img").last().prependTo(".list4");
+            },2000);
+        });
+    &lt;/script&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+    </div>
+</div>
+<!-- sample -->
+
+
+<script>
+    var timer;
+    $(".choice4 .off1").click(function(e){
+        e.preventDefault();
+        clearInterval(timer);
+    });
+    $(".choice4 .btn1").click(function(e){
+        e.preventDefault();
+        timer = setInterval(function(){
+            $(".list4 img").last().prependTo(".list4");
+        },2000);
+    });
+</script>
+<!-- //Sample4 -->
 
 
 

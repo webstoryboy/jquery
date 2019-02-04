@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Sample</title>
+    <style>
+        .select:before {content:'Select'; padding: 4px 4px 2px 4px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color: #e7f6fd; border-radius: 4px;border: 1px dashed #3d90b7;}
+        .rLine {padding: 4px 4px 2px 10px; font-size: 90%; color: #c7254e; white-space: nowrap; background-color: #f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+    </style>
+</head>
+<body>
+    
+    <h3>탐색(Traversing)</h3>
+    <div class="list2">
+        <ul>
+            <li>.eq() 메서드는 선택한 요소에 인덱스 번호에 해당하는 요소를 찾습니다.</li>
+            <li>.filter() 메서드는 선택된 요소에서 선택하거나 함수를 사용할 수 있습니다.</li>
+            <li>.first() 메서드는 선택된 요소에서 첫번째 자식 요소를 찾습니다.</li>
+            <li>.has() 메서드는 선택된 요소의 자식 요소에서 주어진 선택자를 찾습니다.</li>
+            <li>.is() 메서드는 선택된 요소 객체의 특징을 판별합니다.</li>
+            <li>.last() 메서드는 선택된 요소에서 마지막 번째 자식 요소를 찾습니다.</li>
+        </ul>
+    </div>
+    
+    <div class="choice2">
+        <a href="#" class="off1">리셋</a>
+        <a href="#" class="btn1">클릭하면 <em>filter(list)</em>를 선택합니다.</a>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(".choice2 .off1").on("click", function(e){
+            e.preventDefault();
+            $(".list2 li").removeClass("rLine");
+        });
+        
+        var list = $(".list2 li").eq(3);
+        $(".choice2 .btn1").on("click", function(e){
+            e.preventDefault();
+            $(".list2 li").filter(list).addClass("rLine");
+        });
+    </script>
+
+</body>
+</html>

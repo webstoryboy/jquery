@@ -18,8 +18,8 @@
 
 <h4 class="pt50">문법(Syntax)</h4>
 <p class="blue">
-    $("선택자").innerHeight();<br>
-    $("선택자").innerHeight("속성");<br>
+    $("선택자").innerHeight();<br />
+    $("선택자").innerHeight("속성");<br />
     $("선택자").innerHeight(함수);
 </p>
 
@@ -57,9 +57,9 @@
     </div>
     
     <div class="choice1">
-        <a href="#" class="off1">리셋</a>
-        <a href="#" class="btn1">클릭하면 리스트의 높이 값(<em>.height()</em>)을 구합니다.</a>
-        <a href="#" class="btn2">클릭하면 리스트의 높이 값(<em>.innerHeight()</em>)을 구합니다.</a>
+        <a href="#" class="off1">리셋</a><br>
+        <a href="#" class="btn1">클릭하면 리스트의 높이 값(<em>.height()</em>)을 구합니다.</a><br>
+        <a href="#" class="btn2">클릭하면 리스트의 높이 값(<em>.innerHeight()</em>)을 구합니다.</a><br>
         <a href="#" class="btn3">클릭하면 리스트의 높이 값(<em>.outerHeight()</em>)을 구합니다.</a>
     </div>
 </div>
@@ -87,7 +87,7 @@ $( ".choice1 .btn3" ).click(function(){
 
 <div class="sample">
     <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
-    <div class="html on">
+    <div class="html">
         <pre class="line-numbers"><code class="language-markup">&lt;h3&gt;탐색(Traversing)&lt;/h3&gt;
 &lt;div class="list1"&gt;
     &lt;ul class="rLine" style="padding:1px; margin:1px;"&gt;
@@ -183,7 +183,7 @@ $( ".choice1 .btn3" ).click(function(){
 <script>
     $(".choice1 .off1").on("click", function(e){
         e.preventDefault();
-        $(".list1 p").text("");
+        $(".list1 p.bLine").text("");
     });
 
     var html = [ "이 리스트의 속성은 :" ];
@@ -193,7 +193,7 @@ $( ".choice1 .btn3" ).click(function(){
         html.push( prop + ": " + value );
     });
 
-    $(".list1 .txt").html( html.join( "<br>" ) );
+    $(".list1 .txt").html( html.join( "<br />" ) );
 
     function showHeight(element, height){
         $(".list1 .bLine").text( element + "의 높이 값은 " + height + "px.");
@@ -214,13 +214,6 @@ $( ".choice1 .btn3" ).click(function(){
 <!-- //Sample1 -->
 
 
-
-
-
-
-
-
-<hr>
 
 
    

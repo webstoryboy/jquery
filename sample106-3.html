@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Sample</title>
+    <style>
+        li {list-style: none;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+    </style>
+</head>
+<body>
+   
+    <h3>탐색(Traversing)</h3>
+    <div class="list3">
+        <ul>
+            <li><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" alt="150" width="150" /></li>
+        </ul>
+        <p class="desc"></p>
+    </div>
+    
+    <div class="choice3">
+        <a href="#" class="off1">리셋</a>
+        <a href="#" class="btn1">클릭하면 이미지의 <em>크기(200)</em>와 <em>alt(200)</em>값 변경합니다.</a>
+        <a href="#" class="btn2">클릭하면 이미지의 <em>크기(300)</em>와 <em>alt(300)</em>값 변경합니다.</a>
+        <a href="#" class="btn3">클릭하면 이미지의 <em>크기(400)</em>와 <em>alt(400)</em>값 변경합니다.</a>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(".choice3 .off1").on("click", function(e){
+            e.preventDefault();
+            $(".list3 img").attr({"width":"150" , "alt":"150"});
+            $(".list3 .desc").text(" ");
+        });
+        $(".choice3 .btn1").on("click", function(e){
+            e.preventDefault();
+            $(".list3 img").attr({"width":"200" , "alt":"200"});
+            $(".list3 .desc").text( "이미지 width값 : "+$(".list3 img").attr("width") + " / " + "이미지 alt값 : "+$(".list3 img").attr("alt") );
+        });
+        $(".choice3 .btn2").on("click", function(e){
+            e.preventDefault();
+            $(".list3 img").attr({"width":"300" , "alt":"300"});
+            $(".list3 .desc").text( "이미지 width값 : "+$(".list3 img").attr("width") + " / " + "이미지 alt값 : "+$(".list3 img").attr("alt") );
+        });
+        $(".choice3 .btn3").on("click", function(e){
+            e.preventDefault();
+            $(".list3 img").attr({"width":"400" , "alt":"400"});
+            $(".list3 .desc").text( "이미지 width값 : "+$(".list3 img").attr("width") + " / " + "이미지 alt값 : "+$(".list3 img").attr("alt") );
+        });
+    </script>
+</body>
+</html>

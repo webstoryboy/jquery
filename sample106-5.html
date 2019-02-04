@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Sample</title>
+    <style>
+        li {list-style: none; display: inline}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+    </style>
+</head>
+<body>
+   
+    <h3>탐색(Traversing)</h3>
+    <div class="list5">
+        <ul>
+            <li><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" alt="150" width="150" /></li>
+            <li><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover02.jpg" alt="150" width="150" /></li>
+            <li><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover03.jpg" alt="150" width="150" /></li>
+            <li><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="150" width="150" /></li>
+            <li><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg" alt="150" width="150" /></li>
+        </ul>
+    </div>
+    
+    <div class="choice5">
+        <a href="#" class="off1">리셋</a>
+        <a href="#" class="btn1">클릭하면 순차적으로 크게 해줍니다.</a>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(".choice5 .off1").on("click", function(e){
+            e.preventDefault();
+            $(".list5 img").attr({"width":"150"});
+        });
+        $(".choice5 .btn1").on("click", function(e){
+            e.preventDefault();
+            $(".list5 img").attr("width", function(i){
+                return (i + 1) * 50;
+            });
+        });
+    </script>
+</body>
+</html>

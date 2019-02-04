@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Sample</title>
+    <style>
+        li.select:before {content:'Select'; padding: 4px 4px 2px 4px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color: #e7f6fd; border-radius: 4px;border: 1px dashed #3d90b7;}
+        .rLine {padding: 4px 6px 2px 6px; font-size: 90%; color: #c7254e; white-space: nowrap; background-color: #f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d;}
+        .choice2 a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+    </style>
+</head>
+<body>
+    
+    <h3>관찰 중심의 사용자 조사 방법</h3>
+    <div class="list2">
+        <p>UI/UX 관련 조사 목표에 최적화된 결과를 얻기 위해서는 다양한 조사 기법별 특성을 이해 하여야 한다. 프로젝트에 한정된 조사 예산 및 조사 일정을 고려하여야 하며 특히, 사용자 를 둘러싼 환경의 다변화, 연구 방법론의 발달 등으로 인하여 어느 한 가지 조사 기법을 사용하기보다는 다양한 방법들을 서로 융합하여 사용하기도 한다.</p>
+    </div>
+    
+    <div class="choice2">
+        <a href="#c">모든 글씨를 span으로 감싸주고 마우스 오버 효과를 주었습니다.</a>
+    </div>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        var text = $( ".list2 p" ).text().split(" ").join("</span> <span>");
+            text = "<span>" + text + "</span>";
+        
+        $(".list2 p").html(text).find("span").hover(function(){
+              $(this).addClass( "rLine" );
+            }, function() {
+              $(this).removeClass( "rLine" );
+            });
+    </script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Sample</title>
+    <style>
+        li {list-style: none;}
+        .select:before {padding: 4px 6px 2px 6px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color: #e7f6fd; border-radius: 4px;border: 1px dashed #3d90b7;}
+        .rLine {padding: 4px 4px 2px 10px; font-size: 90%; color: #c7254e; white-space: nowrap; background-color: #f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+</style>
+</head>
+<body>
+   
+    <h3>탐색(Traversing)</h3>
+    <div class="list1">
+        <ul>
+            <li><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" alt="img1" width="150" /></li>
+</ul>
+        <p class="desc"></p>
+</div>
+    
+    <div class="choice1">
+        <a href="#" class="off1">리셋</a>
+        <a href="#" class="btn1">클릭하면 이미지의 주소 값을 가져옵니다.</a>
+        <a href="#" class="btn2">클릭하면 이미지의 alt 값을 가져옵니다.</a>
+        <a href="#" class="btn3">클릭하면 이미지의 width 값을 가져옵니다.</a>
+</div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(".choice1 .off1").on("click", function(e){
+            e.preventDefault();
+            $(".list1 p").text("");
+        });
+        $(".choice1 .btn1").on("click", function(e){
+            e.preventDefault();
+            $(".list1 .desc").text( $(".list1 img").attr("src") );
+        });
+        $(".choice1 .btn2").on("click", function(e){
+            e.preventDefault();
+            $(".list1 .desc").text( $(".list1 img").attr("alt") );
+        });
+        $(".choice1 .btn3").on("click", function(e){
+            e.preventDefault();
+            $(".list1 .desc").text( $(".list1 img").attr("width") );
+        });
+</script>
+</body>
+</html>

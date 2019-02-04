@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Sample</title>
+    <style>
+        * {margin: 0; padding: 0;}
+        li {list-style: none;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+        .img_random li {display: inline-block;}
+    </style>
+</head>
+<body>
+    
+    <h3>이미지 랜덤으로 나오기</h3>
+    <div class="list3">
+        <ul>
+            <li><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover01.jpg" alt="" width="100"></li>
+            <li><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover02.jpg" alt="" width="100"></li>
+            <li><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover03.jpg" alt="" width="100"></li>
+            <li><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg" alt="" width="100"></li>
+        </ul>
+    </div>
+    
+    <div class="choice3">
+        <a href="#" class="btn1">클릭하면 리스트 뒤쪽에 이미지가 추가됩니다.</a><br>
+        <a href="#" class="btn2">클릭하면 리스트 앞쪽에 이미지가 추가됩니다.</a><br>
+        <a href="#" class="btn3">클릭하면 리스트 뒤쪽에 이미지를 삭제합니다.</a><br>
+        <a href="#" class="btn4">클릭하면 리스트 앞쪽에 이미지를 삭제합니다.</a><br>
+        <a href="#" class="btn5">클릭하면 리스트 뒤쪽에 이미지를 랜덤으로 추가합니다.</a>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(".choice3 .btn1").click(function(e){
+            e.preventDefault();
+            $(".list3 ul").append("<li><img src='https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover04.jpg' alt='' width='100'></li>" );
+        });
+        $(".choice3 .btn2").click(function(e){
+            e.preventDefault();
+            $(".list3 ul").prepend("<li><img src='https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover05.jpg' alt='' width='100'></li>" );
+        });
+        $(".choice3 .btn3").click(function(e){
+            e.preventDefault();
+            $(".list3 ul li:last").remove();
+        });
+        $(".choice3 .btn4").click(function(e){
+            e.preventDefault();
+            $(".list3 ul li:first").remove();
+        });
+        
+        //이미지가 랜덤으로 나오는 함수
+		function random(){
+			var imgNumber = Math.ceil(Math.random()*9);
+			//alert(imgNumber);
+			var imgPath = "<li><img src='https://tistory1.daumcdn.net/tistory/2933724/skin/images/hover0"+imgNumber+".jpg' alt='' width='100'></li>";
+			//alert(imgPath);
+			return imgPath;
+		}
+		
+		$(".choice3 .btn5").click(function(){
+			$(".list3 ul").append(random);
+		});
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -36,14 +36,14 @@
 
 <!-- Sample1 -->
 <h4 class="pt50">샘플(Sample)</h4>
-<p>.width() : 원하는 요소의 가로 값을 출력하는 예제입니다.</p>
+<p>.width() : 원하는 요소의 가로 값을 출력하는 예제입니다. .width()와 .css()메서드는 단위 출력 유무에 따라 차이점이 있습니다.</p>
 <div class="sample">
     <h5>Sample1<span class="dot"><i></i><i></i><i></i></span></h5>
     <div class="ex">
         <!-- ex -->
         <h3>탐색(Traversing)</h3>
         <div class="list1">
-            <ul>
+            <ul class="rLine">
                 <li>.eq() 메서드는 선택한 요소에 인덱스 번호에 해당하는 요소를 찾습니다.</li>
                 <li>.filter() 메서드는 선택된 요소에서 선택하거나 함수를 사용할 수 있습니다.</li>
                 <li>.first() 메서드는 선택된 요소에서 첫번째 자식 요소를 찾습니다.</li>
@@ -57,11 +57,11 @@
     </div>
     
     <div class="choice1">
-        <a href="#" class="off1">리셋</a>
-        <a href="#" class="btn1">클릭하면 리스트의 가로 값(.width())을 구합니다.</a>
-        <a href="#" class="btn2">클릭하면 브라우저의 가로 값(.css("width"))을 구합니다.</a>
-        <a href="#" class="btn3">클릭하면 이 문서의 가로 값을 구합니다.</a>
-        <a href="#" class="btn4">클릭하면 브라우저의 가로 값을 구합니다.</a>
+        <a href="#" class="off1">리셋</a><br>
+        <a href="#" class="btn1">클릭하면 리스트의 가로 값(<em>.width()</em>)을 구합니다.</a><br>
+        <a href="#" class="btn2">클릭하면 리스트의 가로 값(<em>.css("width")</em>)을 구합니다.</a><br>
+        <a href="#" class="btn3">클릭하면 이 <em>문서</em>의 가로 값을 구합니다.</a><br>
+        <a href="#" class="btn4">클릭하면 <em>브라우저</em>의 가로 값을 구합니다.</a>
     </div>
 </div>
 <!-- sample -->
@@ -71,7 +71,7 @@
     <h5>jquery<span class="dot"><i></i><i></i><i></i></span></h5>
     <div class="script on">
         <pre class="line-numbers"><code class="language-javascript">function showWidth(element, width){
-    $(".list1 p").text( element + "의 높이 값은 " + width + "px.");
+    $(".list1 p").text( element + "의 가로 값은 " + width + "px.");
 }
 $( ".choice1 .btn1" ).click(function(){
     showWidth("리스트(.height())", $(".list1").width());
@@ -91,7 +91,7 @@ $( ".choice1 .btn4" ).click(function(){
 
 <div class="sample">
     <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
-    <div class="html on">
+    <div class="html">
         <pre class="line-numbers"><code class="language-markup">&lt;h3&gt;탐색(Traversing)&lt;/h3&gt;
 &lt;div class="list1"&gt;
     &lt;ul&gt;
@@ -234,9 +234,9 @@ $( ".choice1 .btn4" ).click(function(){
     </div>
     
     <div class="choice2">
-        <a href="#" class="off1">리셋</a>
-        <a href="#" class="btn1">클릭하면 리스트의 가로 값을 280px로 변경합니다.</a>
-        <a href="#" class="btn2">클릭하면 리스트의 가로 값을 450px로 변경합니다.</a>
+        <a href="#" class="off1">리셋</a><br>
+        <a href="#" class="btn1">클릭하면 리스트의 가로 값을 <em>280px</em>로 변경합니다.</a><br>
+        <a href="#" class="btn2">클릭하면 리스트의 가로 값을 <em>450px</em>로 변경합니다.</a>
     </div>
 </div>
 <!-- sample -->
@@ -260,7 +260,7 @@ $(".choice2 .btn2").on("click", function(e){
 
 <div class="sample">
     <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
-    <div class="html on">
+    <div class="html">
         <pre class="line-numbers"><code class="language-markup">&lt;h3&gt;탐색(Traversing)&lt;/h3&gt;
 &lt;div class="list2"&gt;
     &lt;ul class="rLine"&gt;
@@ -410,7 +410,7 @@ $(".choice2 .btn2").on("click", function(e){
 
 <div class="sample">
     <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
-    <div class="html on">
+    <div class="html">
         <pre class="line-numbers"><code class="language-markup">&lt;h3&gt;Dimensions&lt;/h3&gt;
 &lt;div class="list3 img"&gt;
     &lt;img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/watch01.jpg" alt=""&gt;
@@ -501,10 +501,6 @@ $(".choice2 .btn2").on("click", function(e){
 <!-- //Sample3 -->
 
 
-
-
-
-<hr>
 
 
    
