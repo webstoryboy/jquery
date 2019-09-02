@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Sample</title>
+    <style>
+        li.select:before {content:'Select'; padding: 4px 4px 2px 4px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color: #e7f6fd; border-radius: 4px;border: 1px dashed #3d90b7;}
+        .rLine {padding: 4px 4px 2px 10px; font-size: 90%; color: #c7254e; white-space: nowrap; background-color: #f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d;}
+        .choice a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+    </style>
+</head>
+<body>
+    <h3>속성 선택자</h3>
+    <div>
+        <ul class="list">
+            <li>기본 선택자</li>
+            <li>계층 선택자</li>
+            <li>속성 선택자</li>
+            <li>기본 필터 선택자</li>
+            <li>내용 필터 선택자
+                <ul>
+                    <li>:contains()</li>
+                    <li>:empty</li>
+                    <li>:has()</li>
+                    <li>:parent</li>
+                    <li></li>
+                </ul>
+            </li>
+            <li>보임 필터 선택자</li>
+            <li>자식요소 필터 선택자</li>
+            <li>폼 필터 선택자</li>
+        </ul>
+    </div>
+
+    <div class="choice">
+        <a href="#" class="off1">리셋</a>
+        <a href="#" class="btn1">클릭하면 <em>:contains()</em>를 선택합니다.</a>
+        <a href="#" class="btn2">클릭하면 <em>:empty</em>를 선택합니다.</a>
+        <a href="#" class="btn3">클릭하면 <em>:has()</em>를 선택합니다.</a>
+        <a href="#" class="btn4">클릭하면 <em>:parent</em>를 선택합니다.</a>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(".choice .off1").on("click", function(e){
+            e.preventDefault();
+            $(".list li").removeClass("rLine");
+        });
+        $(".choice .btn1").on("click", function(e){
+            e.preventDefault();
+            $(".list li:contains(내용 필터 선택자)").addClass("rLine");
+        });
+        $(".choice .btn2").on("click", function(e){
+            e.preventDefault();
+            $(".list li:empty").addClass("rLine");
+        });
+        $(".choice .btn3").on("click", function(e){
+            e.preventDefault();
+            $(".list li:has(ul)").addClass("rLine");
+        });
+        $(".choice .btn4").on("click", function(e){
+            e.preventDefault();
+            $(".list li:parent").addClass("rLine");
+        });
+    </script>
+</body>
+</html>

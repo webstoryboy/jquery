@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Sample</title>
+    <style>
+        li.select:before {content:'Select'; padding: 4px 4px 2px 4px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color: #e7f6fd; border-radius: 4px;border: 1px dashed #3d90b7;}
+        .rLine {padding: 4px 4px 2px 10px; font-size: 90%; color: #c7254e; white-space: nowrap; background-color: #f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d;}
+        .choice a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+    </style>
+</head>
+<body>
+    
+    <h3>기본 선택자</h3>
+    <div class="list">
+        <ul>
+            <li class="class">태그 선택자 : 기본 태그를 선택합니다.</li>
+            <li id="id">클래스 선택자 : 클래스 태그를 선택합니다.</li>
+            <li>아이디 선택자 : 아이디 태그를 선택합니다.</li>
+            <li>그룹 선택자 : 여러가지 태그를 선택합니다.</li>
+            <li>전체 선택자 : 전체 태그를 선택합니다.</li>
+        </ul>
+    </div>
+    
+    <div class="choice">
+        <a href="#" class="off1">리셋</a>
+        <a href="#" class="btn1">클릭하면 <em>li 태그를</em>를 선택합니다.</a>
+        <a href="#" class="btn2">클릭하면 <em>클래스 선택자</em>를 선택합니다.</a>
+        <a href="#" class="btn3">클릭하면 <em>아이디 선택자</em>를 선택합니다.</a>
+        <a href="#" class="btn4">클릭하면 <em>아이디와 클래스 선택자</em>를 선택합니다.</a>
+        <a href="#" class="btn5">클릭하면 <em>전체 선택자</em>를 선택합니다.</a>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(".choice .off1").on("click", function(e){
+            e.preventDefault();
+            $(".list li").removeClass("rLine");
+        });
+        $(".choice .btn1").on("click", function(e){
+            e.preventDefault();
+            $(".list li").addClass("rLine");
+        });
+        $(".choice .btn2").on("click", function(e){
+            e.preventDefault();
+            $(".list .class").addClass("rLine");
+        });
+        $(".choice .btn3").on("click", function(e){
+            e.preventDefault();
+            $("#id").addClass("rLine");
+        });
+        $(".choice .btn4").on("click", function(e){
+            e.preventDefault();
+            $(".class, #id").addClass("rLine");
+        });
+        $(".choice .btn5").on("click", function(e){
+            e.preventDefault();
+            $(".list ul *").addClass("rLine");
+        });
+    </script>
+</body>
+</html>

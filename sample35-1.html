@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Sample</title>
+    <style>
+        li.select:before {content:'Select'; padding: 4px 4px 2px 4px; font-size: 90%; color: #3d90b7; white-space: nowrap; background-color: #e7f6fd; border-radius: 4px;border: 1px dashed #3d90b7;}
+        .rLine {padding: 4px 4px 2px 10px; font-size: 90%; color: #c7254e; white-space: nowrap; background-color: #f9f2f4; border-radius: 4px; border: 1px dashed #a51a3d;}
+        .choice a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+    </style>
+</head>
+<body>
+    <h3>자식요소 필터 선택자</h3>
+    <form>
+		<fieldset>
+			<input type="button" value="Input Button">
+			<input type="checkbox">
+
+			<input type="file">
+			<input type="hidden">
+			<input type="image">
+
+			<input type="password">
+			<input type="radio">
+			<input type="reset">
+
+			<input type="submit">
+			<input type="text">
+			<select>
+				<option>Option</option>
+			</select>
+
+			<textarea></textarea>
+			<button>Button</button>
+		</fieldset>
+	</form>
+
+    <div class="choice2">
+        <a href="#" class="off1">리셋</a>
+        <a href="#" class="btn1">클릭하면 <em>:button</em>을 클릭합니다.</a>
+
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(".choice2 .off1").on("click", function(e){
+            e.preventDefault();
+            $(".list2 p, .list2 div").removeClass("rLine");
+        });
+        $(".choice2 .btn1").on("click", function(e){
+            e.preventDefault();
+            $(".list2 :nth-child(3)").addClass("rLine");
+        });
+       
+    </script>
+</body>
+</html>
