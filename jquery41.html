@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-    
-    
+
 
 <h2>.closest()</h2>
 <p>선택한 요소를 포함하면서 가장 가까운 상위 요소를 선택합니다.</p>
@@ -31,10 +23,10 @@
    
 
 <!-- Sample1 -->
-<h4 class="pt50">샘플(Sample)</h4>
+<h4 class="pt50">Sample1 <span><a href="https://webstoryboy.github.io/jquery/sample041-1.html" target="_blank"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/blank.gif" class="blank_icon"></a></span></h4>
 <p>선택한 요소 중 가장 가까운 요소를 선택합니다.</p>
 <div class="sample">
-    <h5>Sample1<span class="dot"><i></i><i></i><i></i></span></h5>
+    <h5>결과<span class="dot"><i></i><i></i><i></i></span></h5>
     <div class="ex">
         <!-- ex -->
         <h3>탐색(Traversing)</h3>
@@ -84,7 +76,7 @@ $("li.select").closest("ul").addClass("rLine");</code></pre>
 
 <div class="sample">
     <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
-    <div class="html on">
+    <div class="html">
         <pre class="line-numbers"><code class="language-markup">&lt;h3&gt;탐색(Traversing)&lt;/h3&gt;
 &lt;div class="list1"&gt;
     &lt;ul&gt;
@@ -207,10 +199,10 @@ $("li.select").closest("ul").addClass("rLine");</code></pre>
 
 
 <!-- Sample2 -->
-<h4 class="pt50">샘플(Sample)</h4>
+<h4 class="pt50">Sample2 <span><a href="https://webstoryboy.github.io/jquery/sample041-2.html" target="_blank"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/blank.gif" class="blank_icon"></a></span></h4>
 <p>선택한 요소의 가장 가까운 상위 요소를 선택합니다.</p>
 <div class="sample">
-    <h5>Sample2<span class="dot"><i></i><i></i><i></i></span></h5>
+    <h5>결과<span class="dot"><i></i><i></i><i></i></span></h5>
     <div class="ex">
         <!-- ex -->
         <h3>탐색(Traversing)</h3>
@@ -240,7 +232,7 @@ $("li.select").closest("ul").addClass("rLine");</code></pre>
 
 <div class="sample">
     <h5>jquery<span class="dot"><i></i><i></i><i></i></span></h5>
-    <div class="script on">
+    <div class="script">
         <pre class="line-numbers"><code class="language-javascript">$(".list2 li").on("click", function(event){
   $(event.target).closest("ul").toggleClass("rLine");
 });</code></pre>
@@ -250,7 +242,7 @@ $("li.select").closest("ul").addClass("rLine");</code></pre>
 
 <div class="sample">
     <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
-    <div class="html on">
+    <div class="html">
         <pre class="line-numbers"><code class="language-markup">&lt;h3&gt;탐색(Traversing)&lt;/h3&gt;
 &lt;div class="list2"&gt;
     &lt;ul&gt;
@@ -335,10 +327,10 @@ $("li.select").closest("ul").addClass("rLine");</code></pre>
 
 
 <!-- Sample3 -->
-<h4 class="pt50">샘플(Sample)</h4>
+<h4 class="pt50">Sample3 <span><a href="https://webstoryboy.github.io/jquery/sample041-3.html" target="_blank"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/blank.gif" class="blank_icon"></a></span></h4>
 <p>선택한 요소의 가장 가까운 상위 요소를 변수를 통해 선택합니다.</p>
 <div class="sample">
-    <h5>Sample3<span class="dot"><i></i><i></i><i></i></span></h5>
+    <h5>결과<span class="dot"><i></i><i></i><i></i></span></h5>
     <div class="ex">
         <!-- ex -->
         <h3>탐색(Traversing)</h3>
@@ -360,8 +352,7 @@ $("li.select").closest("ul").addClass("rLine");</code></pre>
     </div>
     
     <div class="choice3">
-        <a href="#" class="off1">리셋</a>
-        <a href="#" class="btn1"><em>select</em>를 클릭하면 가장 가까운 상위 요소<em>li</em>를 변수를 통해 선택합니다.</a>
+        <em>select</em>를 클릭하면 가장 가까운 상위 요소<em>li</em>를 변수를 통해 선택합니다.
     </div>
 </div>
 <!-- sample -->
@@ -369,7 +360,7 @@ $("li.select").closest("ul").addClass("rLine");</code></pre>
 
 <div class="sample">
     <h5>jquery<span class="dot"><i></i><i></i><i></i></span></h5>
-    <div class="script on">
+    <div class="script">
         <pre class="line-numbers"><code class="language-javascript">var span = $(".list3 li");
 $(".list3 li span").on("click", function(event){
     $(event.target).closest(span).toggleClass("rLine");
@@ -380,7 +371,7 @@ $(".list3 li span").on("click", function(event){
 
 <div class="sample">
     <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
-    <div class="html on">
+    <div class="html">
         <pre class="line-numbers"><code class="language-markup">&lt;h3&gt;탐색(Traversing)&lt;/h3&gt;
 &lt;div class="list3"&gt;
     &lt;ul&gt;
@@ -433,17 +424,11 @@ $(".list3 li span").on("click", function(event){
     &lt;/div&gt;
     
     &lt;div class="choice3"&gt;
-        &lt;a href="#" class="off1"&gt;리셋&lt;/a&gt;
-        &lt;a href="#" class="btn1"&gt;&lt;em&gt;li&lt;/em&gt;를 클릭하면 가장 가까운 상위 요소를 선택합니다.&lt;/a&gt;
+        &lt;em&gt;li&lt;/em&gt;를 클릭하면 가장 가까운 상위 요소를 선택합니다.
     &lt;/div&gt;
     
     &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"&gt;&lt;/script&gt;
     &lt;script&gt;
-        $(".choice1 .off1").on("click", function(e){
-            e.preventDefault();
-            $(".list1 li, .list1 ul").removeClass("rLine");
-        });
-        
         var span = $(".list3 li");
         $(".list3 li span").on("click", function(event){
           $(event.target).closest(span).toggleClass("rLine");
@@ -458,11 +443,6 @@ $(".list3 li span").on("click", function(event){
 
 
 <script>
-    $(".choice1 .off1").on("click", function(e){
-        e.preventDefault();
-        $(".list1 li, .list1 ul").removeClass("rLine");
-    });
-
     var span = $(".list3 li");
     $(".list3 li span").on("click", function(event){
       $(event.target).closest(span).toggleClass("rLine");
@@ -470,10 +450,3 @@ $(".list3 li span").on("click", function(event){
 </script>
 <!-- //Sample3 -->
 
-
-
-<hr>
- 
-    
-</body>
-</html>

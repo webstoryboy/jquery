@@ -28,20 +28,14 @@
     </div>
     
     <div class="choice3">
-        <a href="#" class="off1">리셋</a>
-        <a href="#" class="btn1">클릭하면 <em>select</em>의 가장 가까운 상위 요소<em>li</em>를 선택합니다.</a>
+        클릭하면 <em>select</em>의 가장 가까운 상위 요소<em>li</em>를 선택합니다.
     </div>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
-        $(".choice1 .off1").on("click", function(e){
-            e.preventDefault();
-            $(".list1 li, .list1 ul").removeClass("rLine");
-        });
-        
         var span = $(".list3 li");
         $(".list3 li span").on("click", function(event){
-          $(event.target).closest(span).toggleClass("rLine");
+            $(event.target).closest(span).toggleClass("rLine");
         });
     </script>
 

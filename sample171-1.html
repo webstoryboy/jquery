@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Sample</title>
+    <style>
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+    </style>
+</head>
+<body>
+    
+    <h3>속성(Attributes)</h3>
+    <div class="list1" style="display: none;">
+        <ul>
+            <li>.closest() 메서드는 선택한 요소의 상위 요소 중 가장 가까운 요소를 선택합니다.</li>
+            <li>.find() 메서드는 선택한 요소에서 조건에 맞는 요소를 다시 선택합니다.</li>
+            <li>.next() 메서드는 선택한 요소의 다음 요소를 선택합니다.</li>
+            <li>.nextAll() 메서드는 선택한 요소의 다음 요소를 선택합니다.</li>
+        </ul>
+    </div>
+    
+    <div class="choice1">
+        <a href="#" class="off1">리셋</a>
+        <a href="#" class="btn1">클릭하면 리스트를 <em>.slideDown()</em> 슬라이딩으로 보여줍니다.</a>
+        <a href="#" class="btn2">클릭하면 리스트를 <em>.slideDown("slow")</em> 슬라이딩으로 보여줍니다.</a>
+        <a href="#" class="btn3">클릭하면 리스트를 <em>.slideDown(2000)</em> 슬라이딩으로 보여줍니다.</a>
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(".choice1 .off1").on("click", function(e){
+            e.preventDefault();
+            $(".list1").hide();
+        });
+        $(".choice1 .btn1").on("click", function(e){
+            e.preventDefault();
+            $(".list1").slideDown();
+        });
+        $(".choice1 .btn2").on("click", function(e){
+            e.preventDefault();
+            $(".list1").slideDown("slow");
+        });
+        $(".choice1 .btn3").on("click", function(e){
+            e.preventDefault();
+            $(".list1").slideDown(2000);
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Sample</title>
+    <style>
+        .circle {width: 100px; height: 100px; color: #c7254e; background-color: #f9f2f4; border-radius: 50%; border: 1px dashed #a51a3d; text-align: center; line-height: 100px; display: inline-block;}
+        a {border: 1px solid #5f6368; padding: 7px 20px 5px 20px; display: inline-block; border-radius: 20px; text-decoration: none;}
+        body {width: 5000px; height: 5000px;}
+    </style>
+</head>
+<body>
+    
+    <h3>속성(ATTRIBUTES)</h3>
+    <div class="list2">
+        <div class="circle">
+            <span class="scroll_left">0</span> px
+        </div>
+        <div class="circle">
+            <span class="scroll_top">0</span> px
+        </div>
+    </div>
+    
+    <div class="choice2">
+        스크롤을 하면 <em>scrollLeft()</em>, <em>scrollTop()</em> 좌표값을 표현합니다.
+    </div>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>
+        $(window).scroll(function(){
+            var lScroll = $(this).scrollLeft();
+            $(".scroll_left").text(lScroll);
+        });
+        $(window).scroll(function(){
+            var tScroll = $(this).scrollTop();
+            $(".scroll_top").text(tScroll);
+        });
+    </script>
+</body>
+</html>

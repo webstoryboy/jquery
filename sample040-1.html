@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>jQuery Sample</title>
@@ -40,9 +40,9 @@
     
     <div class="choice">
         <a href="#c" class="off1">리셋</a>
-        <a href="#c" class="btn1">클릭하면 자식 요소를 선택합니다.</a>
+        <a href="#c" class="btn1">클릭하면 <em>$(".select").children()</em>를 선택합니다.</a>
+        <a href="#c" class="btn2">클릭하면 <em>$(".select").find("ul")</em>를 선택합니다.</a>
     </div>
-    
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script>
@@ -52,9 +52,12 @@
         });
         $(".choice .btn1").on("click", function(e){
             e.preventDefault();
-            $(".list li").children().addClass("rLine");
+            $(".list .select").children().addClass("rLine");
+        });
+        $(".choice .btn2").on("click", function(e){
+            e.preventDefault();
+            $(".list .select").find("ul").addClass("rLine");
         });
     </script>
-
 </body>
 </html>

@@ -23,10 +23,10 @@
 
 
 <!-- Sample1 -->
-<h4 class="pt50">샘플(Sample) <span><a href="sample040-1.html" target="_blank"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/blank.gif" class="blank_icon"></a></span></h4>
+<h4 class="pt50">Sample1 <span><a href="https://webstoryboy.github.io/jquery/sample040-1.html" target="_blank"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/blank.gif" class="blank_icon"></a></span></h4>
 <p>선택한 요소의 자식 요소를 선택합니다. 여러 요소의 자식이 있어도 첫 번째 자식만 선택합니다.</p>
 <div class="sample">
-    <h5>Sample1<span class="dot"><i></i><i></i><i></i></span></h5>
+    <h5>결과<span class="dot"><i></i><i></i><i></i></span></h5>
     <div class="ex">
         <!-- ex -->
         <h3>탐색(Traversing)</h3>
@@ -60,7 +60,8 @@
     
     <div class="choice">
         <a href="#c" class="off1">리셋</a>
-        <a href="#c" class="btn1">클릭하면 <em>선택자</em>의 자식 요소를 선택합니다.</a>
+        <a href="#c" class="btn1">클릭하면 <em>$(".select").children()</em>를 선택합니다.</a>
+        <a href="#c" class="btn2">클릭하면 <em>$(".select").find("ul")</em>를 선택합니다.</a>
     </div>
 </div>
 <!-- sample -->
@@ -69,7 +70,8 @@
 <div class="sample">
     <h5>jquery<span class="dot"><i></i><i></i><i></i></span></h5>
     <div class="script">
-        <pre class="line-numbers"><code class="language-javascript">$(".list li").children().addClass("rLine");</code></pre>
+<pre class="line-numbers"><code class="language-javascript">$(".list .select").children().addClass("rLine");
+$(".list .select").find("ul").addClass("rLine");</code></pre>
     </div>
 </div>
 <!-- sample -->
@@ -152,7 +154,8 @@
     
     &lt;div class="choice"&gt;
         &lt;a href="#c" class="off1"&gt;리셋&lt;/a&gt;
-        &lt;a href="#c" class="btn1"&gt;클릭하면 자식 요소를 선택합니다.&lt;/a&gt;
+        &lt;a href="#c" class="btn1"&gt;클릭하면 &lt;em&gt;$(".select").children()&lt;/em&gt;를 선택합니다.&lt;/a&gt;
+        &lt;a href="#c" class="btn2"&gt;클릭하면 &lt;em&gt;$(".select").find("ul")&lt;/em&gt;를 선택합니다.&lt;/a&gt;
     &lt;/div&gt;
     
     
@@ -164,7 +167,11 @@
         });
         $(".choice .btn1").on("click", function(e){
             e.preventDefault();
-            $(".list li").children().addClass("rLine");
+            $(".list .select").children().addClass("rLine");
+        });
+        $(".choice .btn2").on("click", function(e){
+            e.preventDefault();
+            $(".list .select").find("ul").addClass("rLine");
         });
     &lt;/script&gt;
 
@@ -182,7 +189,11 @@
     });
     $(".choice .btn1").on("click", function(e){
         e.preventDefault();
-        $(".list li").children().addClass("rLine");
+        $(".list .select").children().addClass("rLine");
+    });
+    $(".choice .btn2").on("click", function(e){
+        e.preventDefault();
+        $(".list .select").find("ul").addClass("rLine");
     });
 </script>
 <!-- //Sample1 -->
@@ -193,10 +204,10 @@
 
 
 <!-- Sample2 -->
-<h4 class="pt50">샘플(Sample)</h4>
+<h4 class="pt50">Sample2 <span><a href="https://webstoryboy.github.io/jquery/sample040-2.html" target="_blank"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/blank.gif" class="blank_icon"></a></span></h4>
 <p>선택한 요소의 자식 요소를 선택합니다. 첫 번째 자식 중에서도 클래스 이름으로 구별하여 선택할 수 있습니다.</p>
 <div class="sample">
-    <h5>Sample2<span class="dot"><i></i><i></i><i></i></span></h5>
+    <h5>결과<span class="dot"><i></i><i></i><i></i></span></h5>
     <div class="ex">
         <!-- ex -->
         <h3>탐색(Traversing)</h3>

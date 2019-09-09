@@ -30,7 +30,7 @@
     <script>
         $(".choice2 .off1").on("click", function(e){
             e.preventDefault();
-            $(".list2 ul:eq(1), .list2 p").remove();
+            $(".list2 ul:not(:eq(0)), .list2 p").remove();
         });
         $(".choice2 .btn1").on("click", function(e){
             e.preventDefault();

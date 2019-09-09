@@ -1,12 +1,4 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-    
-    
+
 
 <h2>.find()</h2>
 <p>선택한 요소의 자식 요소 중 조건에 맞는 요소를 선택합니다.</p>
@@ -34,13 +26,15 @@
     <li>.find() : 모든 자식 중에서 선택합니다.</li>
 </ul>
 
+
+
    
 
 <!-- Sample1 -->
-<h4 class="pt50">샘플(Sample)</h4>
+<h4 class="pt50">Sample1 <span><a href="https://webstoryboy.github.io/jquery/sample042-1.html" target="_blank"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/blank.gif" class="blank_icon"></a></span></h4>
 <p>선택한 요소의 자식 요소를 선택합니다. 태그를 통하여 원하는 요소를 선택할 수 있습니다.</p>
 <div class="sample">
-    <h5>Sample1<span class="dot"><i></i><i></i><i></i></span></h5>
+    <h5>결과<span class="dot"><i></i><i></i><i></i></span></h5>
     <div class="ex">
         <!-- ex -->
         <h3>탐색(Traversing)</h3>
@@ -81,7 +75,7 @@
 
 <div class="sample">
     <h5>jquery<span class="dot"><i></i><i></i><i></i></span></h5>
-    <div class="script on">
+    <div class="script">
         <pre class="line-numbers"><code class="language-javascript">$(".list li").find("li").addClass("rLine");
 $(".list li").find("span").addClass("rLine");</code></pre>
     </div>
@@ -90,7 +84,7 @@ $(".list li").find("span").addClass("rLine");</code></pre>
 
 <div class="sample">
     <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
-    <div class="html on">
+    <div class="html">
         <pre class="line-numbers"><code class="language-markup">&lt;h3&gt;탐색(Traversing)&lt;/h3&gt;
     &lt;div class="list"&gt;
         &lt;ul&gt;
@@ -215,10 +209,10 @@ $(".list li").find("span").addClass("rLine");</code></pre>
    
 
 <!-- Sample2 -->
-<h4 class="pt50">샘플(Sample)</h4>
+<h4 class="pt50">Sample2 <span><a href="https://webstoryboy.github.io/jquery/sample042-2.html" target="_blank"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/blank.gif" class="blank_icon"></a></span></h4>
 <p>모든 텍스트 요소를 span 태그로 감싸줍니다. 마우스를 오버하면 span 태그를 찾아 마우스오버 효과를 줍니다.</p>
 <div class="sample">
-    <h5>Sample2<span class="dot"><i></i><i></i><i></i></span></h5>
+    <h5>결과<span class="dot"><i></i><i></i><i></i></span></h5>
     <div class="ex">
         <!-- ex -->
         <h3>관찰 중심의 사용자 조사 방법</h3>
@@ -229,7 +223,7 @@ $(".list li").find("span").addClass("rLine");</code></pre>
     </div>
     
     <div class="choice2">
-        <a href="#c">마우스를 오버하면 효과가 나타납니다.</a>
+        마우스를 오버하면 효과가 나타납니다.
     </div>
 </div>
 <!-- sample -->
@@ -237,22 +231,22 @@ $(".list li").find("span").addClass("rLine");</code></pre>
 
 <div class="sample">
     <h5>jquery<span class="dot"><i></i><i></i><i></i></span></h5>
-    <div class="script on">
+    <div class="script">
         <pre class="line-numbers"><code class="language-javascript">var text = $( ".list2 p" ).text().split(" ").join("&lt;/span&gt; &lt;span&gt;");
-    text = "&lt;span&gt;" + text + "&lt;/span&gt;";
+text = "&lt;span&gt;" + text + "&lt;/span&gt;";
 
 $(".list2 p").html(text).find("span").hover(function(){
-      $(this).addClass( "rLine" );
-    }, function() {
-      $(this).removeClass( "rLine" );
-    });</code></pre>
+    $(this).addClass( "rLine" );
+}, function() {
+    $(this).removeClass( "rLine" );
+});</code></pre>
     </div>
 </div>
 <!-- sample -->
 
 <div class="sample">
     <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
-    <div class="html on">
+    <div class="html">
         <pre class="line-numbers"><code class="language-markup">&lt;h3&gt;관찰 중심의 사용자 조사 방법&lt;/h3&gt;
 &lt;div class="list2"&gt;
     &lt;p&gt;UI/UX 관련 조사 목표에 최적화된 결과를 얻기 위해서는 다양한 조사 기법별 특성을 이해 하여야 한다. 프로젝트에 한정된 조사 예산 및 조사 일정을 고려하여야 하며 특히, 사용자 를 둘러싼 환경의 다변화, 연구 방법론의 발달 등으로 인하여 어느 한 가지 조사 기법을 사용하기보다는 다양한 방법들을 서로 융합하여 사용하기도 한다.&lt;/p&gt;
@@ -330,7 +324,7 @@ $(".list2 p").html(text).find("span").hover(function(){
  
 
 <!-- Sample3 -->
-<h4 class="pt50">샘플(Sample)</h4>
+<h4 class="pt50">Sample3 <span><a href="https://webstoryboy.github.io/jquery/sample042-3.html" target="_blank"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/blank.gif" class="blank_icon"></a></span></h4>
 <p>모든 텍스트 요소를 span 태그로 감싸줍니다. 컨텐츠 요소에서 원하는 글씨를 선택 후 효과를 줍니다.</p>
 <div class="sample">
     <h5>Sample3<span class="dot"><i></i><i></i><i></i></span></h5>
@@ -354,7 +348,7 @@ $(".list2 p").html(text).find("span").hover(function(){
 
 <div class="sample">
     <h5>jquery<span class="dot"><i></i><i></i><i></i></span></h5>
-    <div class="script on">
+    <div class="script">
         <pre class="line-numbers"><code class="language-javascript">$(".list3 p").html(text).find(":contains('데이터')").addClass("rLine");
 $(".list3 p").html(text).find(":contains('친화도법')").addClass("bLine");</code></pre>
     </div>
@@ -363,7 +357,7 @@ $(".list3 p").html(text).find(":contains('친화도법')").addClass("bLine");</c
 
 <div class="sample">
     <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
-    <div class="html on">
+    <div class="html">
         <pre class="line-numbers"><code class="language-markup"> &lt;h3&gt;친화도법(affinity diagram)&lt;/h3&gt;
     &lt;div class="list3"&gt;
         &lt;p&gt;친화도법은 심층인터뷰나 포커스 그룹 인터뷰와 같이 정성적 조사 수행 결과로 얻은 질적 인 데이터를 분석(qualitative data analysis)하는 기법이다. 설문조사와 같은 정량적 조사가 비교적 간단히 통계 분석을 이용해 데이터를 처리하는 것과 다르게 정성적 조사 결과를 통해 얻는 데이터들은 통계처리가 불가하다. 정성적조사결과를 통해 나온 많은 양의 인터뷰 내용기록, 음성기록, 사진, 촬영기록물등의 데이터는 이로부터 도출된 추가 적발 견사항이나 시사점 등이 더해지게 되는데, 이러한 방대한 자료를 분석하기 위해서는 상당 한 인력과 시간이 소요될 수밖에 없다. 친화도법은 이러한 광범위한 데이터를 모으고 카드 화하여 도해화하는 과정을 거치는데 카드 간의 친화성을 근거로 방향성을 밝힐 수 있게 하도록 고안된 기법이다.&lt;/p&gt;
@@ -450,19 +444,86 @@ $(".list3 p").html(text).find(":contains('친화도법')").addClass("bLine");</c
 <!-- //Sample3 -->
 
 
-<h4 class="pt50">참고(reference)</h4>
-<ul>
-    <li>:contains() 셀렉터는 텍스트와 일치하는 문자열의 요소를 선택합니다.</li>
-    <li>.text() 메서드는 선택한 요소 내부의 텍스트를 읽거나 쓸 수 있습니다.</li>
-    <li>.html() 메서드는 선택한 요소 내부의 HTML을 읽거나 쓸 수 있습니다.</li>
-    <li>.addClass() 메서드는 하나 이상의 클래스를 추가합니다.</li>
-</ul>
+<h4 class="pt50">호환성(Compatibility)</h4>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover compatibility">
+        <thead>
+            <tr>
+                <th class="ce">메서드</th>
+                <th class="ce">버전</th>
+                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-chrome1.png" alt="크롬 아이콘" title="크롬 브라우저"></th>
+                <th scope="col"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/icon-firefox1.png" alt="파이어폭스 아이콘" title="파이어폭스 브라우저"></th>
+                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-safari1.png" alt="사파리 아이콘" title="사파리 브라우저"></th>
+                <th scope="col"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/icon-opera1.png" alt="오페라 아이콘" title="오페라 브라우저"></th>
+                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-whale1.png" alt="네이버 웨일" title="네이버 웨일 브라우저"></th>
+                <th scope="col"><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/icon-ie6.png" alt="익스플로러6 아이콘" title="인터넷 익스플로러6 브라우저"><em>6</em></th>
+                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie7.png" alt="익스플로러7 아이콘" title="인터넷 익스플로러7 브라우저"><em>7</em></th>
+                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie7.png" alt="익스플로러8 아이콘" title="인터넷 익스플로러8 브라우저"><em>8</em></th>
+                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie9.png" alt="익스플로러9 아이콘" title="인터넷 익스플로러9 브라우저"><em>9</em></th>
+                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie10.png" alt="익스플로러10 아이콘" title="인터넷 익스플로러10 브라우저"><em>10</em></th>
+                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie11.png" alt="익스플로러11 아이콘" title="인터넷 익스플로러11 브라우저"><em>11</em></th>
+                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-edge.png" alt="엣지 아이콘" title="엣지 브라우저"></th>
+                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-android.png" alt="안드로이드 아이콘" title="모바일 안드로이드 브라우저"></th>
+                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ios.png" alt="ios 아이콘" title="모바일 아이폰 브라우저"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="ce" scope="row" rowspan="3">children()</td>
+                <td class="ce">jQeury 1.x 버전</td>
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 크롬 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 파이어폭스 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 사파리 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 오페라 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 네이버 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 익스플로러6 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 익스플로러7 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 익스플로러8 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 익스플로러9 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 익스플로러10 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 익스플로러11 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 엣지 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 안드로이드 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- IOS -->
+            </tr>
+            <tr>
+                <td class="ce">jQeury 2.x 버전</td>
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 크롬 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 파이어폭스 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 사파리 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 오페라 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 네이버 -->
+                <td class="no"><span title="사용 할 수 없습니다.">사용안됨</span></td><!-- 익스플로러6 -->
+                <td class="no"><span title="사용 할 수 없습니다.">사용안됨</span></td><!-- 익스플로러7 -->
+                <td class="no"><span title="사용 할 수 없습니다.">사용안됨</span></td><!-- 익스플로러8 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 익스플로러9 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 익스플로러10 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 익스플로러11 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 엣지 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 안드로이드 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- IOS -->
+            </tr>
+            <tr>
+                <td class="ce">jQeury 3.x 버전</td>
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 크롬 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 파이어폭스 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 사파리 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 오페라 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 네이버 -->
+                <td class="no"><span title="사용 할 수 없습니다.">사용안됨</span></td><!-- 익스플로러6 -->
+                <td class="no"><span title="사용 할 수 없습니다.">사용안됨</span></td><!-- 익스플로러7 -->
+                <td class="no"><span title="사용 할 수 없습니다.">사용안됨</span></td><!-- 익스플로러8 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 익스플로러9 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 익스플로러10 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 익스플로러11 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 엣지 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 안드로이드 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- IOS -->
+            </tr>
+        </tbody>
+    </table>
+</div>
 
 
 
 
-<hr>
-   
-    
-</body>
-</html>

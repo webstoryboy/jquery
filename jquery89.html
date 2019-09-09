@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>Document</title>
-</head>
-<body>
-    
+
     
 
 <h2>.siblings()</h2>
@@ -31,10 +24,11 @@
    
 
 <!-- Sample1 -->
-<h4 class="pt50">샘플(Sample)</h4>
+<h4 class="pt50">Sample1 <span><a href="https://webstoryboy.github.io/jquery/sample089-1.html" target="_blank"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/blank.gif" class="blank_icon"></a></span></h4>
+
 <p>선택한 요소를 제외한 형제 선택자를 선택합니다.</p>
 <div class="sample">
-    <h5>Sample1<span class="dot"><i></i><i></i><i></i></span></h5>
+    <h5>결과<span class="dot"><i></i><i></i><i></i></span></h5>
     <div class="ex">
         <!-- ex -->
         <h3>탐색(Traversing)</h3>
@@ -66,7 +60,7 @@
 
 <div class="sample">
     <h5>jquery<span class="dot"><i></i><i></i><i></i></span></h5>
-    <div class="script on">
+    <div class="script">
         <pre class="line-numbers"><code class="language-javascript">$(".select").siblings().addClass("rLine");</code></pre>
     </div>
 </div>
@@ -74,7 +68,7 @@
 
 <div class="sample">
     <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
-    <div class="html on">
+    <div class="html">
         <pre class="line-numbers"><code class="language-markup">&lt;h3&gt;탐색(Traversing)&lt;/h3&gt;
 &lt;div class="list1"&gt;
     &lt;ul&gt;
@@ -173,7 +167,8 @@
 
 
 <!-- Sample2 -->
-<h4 class="pt50">샘플(Sample)</h4>
+<h4 class="pt50">Sample2 <span><a href="https://webstoryboy.github.io/jquery/sample089-2.html" target="_blank"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/blank.gif" class="blank_icon"></a></span></h4>
+
 <p>선택한 요소를 제외한 형제 선택자 중 선택한 요소만 선택합니다.</p>
 <div class="sample">
     <h5>Sample2<span class="dot"><i></i><i></i><i></i></span></h5>
@@ -208,7 +203,7 @@
 
 <div class="sample">
     <h5>jquery<span class="dot"><i></i><i></i><i></i></span></h5>
-    <div class="script on">
+    <div class="script">
         <pre class="line-numbers"><code class="language-javascript">$(".select").siblings(".p").addClass("rLine");</code></pre>
     </div>
 </div>
@@ -216,7 +211,7 @@
 
 <div class="sample">
     <h5>html<span class="dot"><i></i><i></i><i></i></span></h5>
-    <div class="html on">
+    <div class="html">
         <pre class="line-numbers"><code class="language-markup">&lt;h3&gt;탐색(Traversing)&lt;/h3&gt;
 &lt;div class="list2"&gt;
     &lt;ul&gt;
@@ -310,8 +305,85 @@
 
 
 
-<hr>
- 
-    
-</body>
-</html>
+
+<h4 class="pt50">호환성(Compatibility)</h4>
+<div class="table-responsive">
+    <table class="table table-bordered table-striped table-hover compatibility">
+        <thead>
+            <tr>
+                <th class="ce">메서드</th>
+                <th class="ce">버전</th>
+                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-chrome1.png" alt="크롬 아이콘" title="크롬 브라우저"></th>
+                <th scope="col"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/icon-firefox1.png" alt="파이어폭스 아이콘" title="파이어폭스 브라우저"></th>
+                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-safari1.png" alt="사파리 아이콘" title="사파리 브라우저"></th>
+                <th scope="col"><img src="https://tistory3.daumcdn.net/tistory/2933724/skin/images/icon-opera1.png" alt="오페라 아이콘" title="오페라 브라우저"></th>
+                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-whale1.png" alt="네이버 웨일" title="네이버 웨일 브라우저"></th>
+                <th scope="col"><img src="https://tistory4.daumcdn.net/tistory/2933724/skin/images/icon-ie6.png" alt="익스플로러6 아이콘" title="인터넷 익스플로러6 브라우저"><em>6</em></th>
+                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie7.png" alt="익스플로러7 아이콘" title="인터넷 익스플로러7 브라우저"><em>7</em></th>
+                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie7.png" alt="익스플로러8 아이콘" title="인터넷 익스플로러8 브라우저"><em>8</em></th>
+                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie9.png" alt="익스플로러9 아이콘" title="인터넷 익스플로러9 브라우저"><em>9</em></th>
+                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie10.png" alt="익스플로러10 아이콘" title="인터넷 익스플로러10 브라우저"><em>10</em></th>
+                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ie11.png" alt="익스플로러11 아이콘" title="인터넷 익스플로러11 브라우저"><em>11</em></th>
+                <th scope="col"><img src="https://tistory1.daumcdn.net/tistory/2933724/skin/images/icon-edge.png" alt="엣지 아이콘" title="엣지 브라우저"></th>
+                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-android.png" alt="안드로이드 아이콘" title="모바일 안드로이드 브라우저"></th>
+                <th scope="col"><img src="https://tistory2.daumcdn.net/tistory/2933724/skin/images/icon-ios.png" alt="ios 아이콘" title="모바일 아이폰 브라우저"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="ce" scope="row" rowspan="3">siblings()</td>
+                <td class="ce">jQeury 1.x 버전</td>
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 크롬 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 파이어폭스 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 사파리 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 오페라 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 네이버 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 익스플로러6 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 익스플로러7 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 익스플로러8 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 익스플로러9 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 익스플로러10 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 익스플로러11 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 엣지 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 안드로이드 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- IOS -->
+            </tr>
+            <tr>
+                <td class="ce">jQeury 2.x 버전</td>
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 크롬 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 파이어폭스 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 사파리 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 오페라 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 네이버 -->
+                <td class="no"><span title="사용 할 수 없습니다.">사용안됨</span></td><!-- 익스플로러6 -->
+                <td class="no"><span title="사용 할 수 없습니다.">사용안됨</span></td><!-- 익스플로러7 -->
+                <td class="no"><span title="사용 할 수 없습니다.">사용안됨</span></td><!-- 익스플로러8 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 익스플로러9 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 익스플로러10 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 익스플로러11 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 엣지 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 안드로이드 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- IOS -->
+            </tr>
+            <tr>
+                <td class="ce">jQeury 3.x 버전</td>
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 크롬 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 파이어폭스 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 사파리 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 오페라 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 네이버 -->
+                <td class="no"><span title="사용 할 수 없습니다.">사용안됨</span></td><!-- 익스플로러6 -->
+                <td class="no"><span title="사용 할 수 없습니다.">사용안됨</span></td><!-- 익스플로러7 -->
+                <td class="no"><span title="사용 할 수 없습니다.">사용안됨</span></td><!-- 익스플로러8 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 익스플로러9 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 익스플로러10 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 익스플로러11 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 엣지 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- 안드로이드 -->
+                <td><span title="사용가능합니다.">사용가능</span></td><!-- IOS -->
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
