@@ -19,24 +19,24 @@
         </thead>
         <tbody>
             <tr>
-                <td>후손 선택자(Descendant Selector)</td>
-                <td>$("div li")</td>
-                <td>자식(하위) 태그 모두 선택합니다.</td>
+                <td>하위 선택자(Descendant Selector)</td>
+                <td>$("div p")</td>
+                <td>div 태그의 모든 자식 중 p 태그를 모두 선택합니다.</td>
             </tr>
             <tr>
-                <td>자손 선택자(Child Selector)</td>
+                <td>자식 선택자(Child Selector)</td>
                 <td>$("div > p")</td>
-                <td>첫 번째 자식(하위) 태그만 선택합니다.</td>
+                <td>div 태그의 모든 자식 중 첫번째 자식 p 태그를 선택합니다.</td>
             </tr>
             <tr>
                 <td>형제 선택자(Next Adjacent Selector)</td>
                 <td>$("div + p")</td>
-                <td>자식 태그 다음 형제 태그를 선택합니다.</td>
+                <td>div 태그의 인접한 형제 p 태그 중 첫번째 태그만 선택합니다.</td>
             </tr>
             <tr>
                 <td>형제들 선택자(Next Siblings Selector)</td>
-                <td>$("div ~ li")</td>
-                <td>자식 태그 다음 모든 형제태그를 선택합니다.</td>
+                <td>$("div ~ p")</td>
+                <td>div 태그의 인접한 형제 p 태그를 모두 선택합니다.</td>
             </tr>
         </tbody>
     </table>
